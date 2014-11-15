@@ -33,5 +33,5 @@ RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Add ddclient to runit
 RUN mkdir /etc/service/ddclient
-ADD upsboard.sh /etc/service/ddclient/run
+ADD ddclient.sh /etc/service/ddclient/run
 RUN chmod +x /etc/service/ddclient/run
