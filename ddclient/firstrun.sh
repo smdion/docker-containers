@@ -5,6 +5,6 @@ if [ -f /config/ddclient.conf ]; then
   echo "Using existing config file."
 else
   echo "Creating config from template."
-  wget -P /config/ https://raw.githubusercontent.com/smdion/docker-containers/master/ddclient/ddclient.conf
+  mv /etc/ddclient.conf-sample /config/ddclient.conf
   chown nobody:users /config/ddclient.conf
 fi
