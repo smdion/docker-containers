@@ -8,8 +8,8 @@ Edit /config/ddclient.conf[br][br]&#13;
 </Description>
   <Registry>https://registry.hub.docker.com/u/smdion/docker-ddclient/</Registry>
   <Repository>smdion/docker-ddclient</Repository>
-  <BindTime>true</BindTime>
-  <Privileged>true</Privileged>
+  <BindTime>false</BindTime>
+  <Privileged>false</Privileged>
   <Environment/>
   <Networking>
     <Mode>host</Mode>
@@ -17,7 +17,7 @@ Edit /config/ddclient.conf[br][br]&#13;
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/ddclient/</HostDir>
+      <HostDir></HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
