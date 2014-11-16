@@ -13,7 +13,7 @@ Edit /config/ddclient.conf[br][br]
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Networking>
-    <Mode>bridge</Mode>
+    <Mode>none</Mode>
     <Publish>
       <Port>
         <HostPort></HostPort>
