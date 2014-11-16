@@ -35,7 +35,7 @@ else
 
 	#only allow internal clients
 	sed -i '23d' /config/polipo.conf
-	sed -i -e 's|# allowedClients = 127.0.0.1|allowedClients = 127.0.0.1, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16|' /config/polipo.conf
+	sed -i -e 's|# allowedClients = 127.0.0.1, 192.168.42.0/24|allowedClients = 127.0.0.1, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16|' /config/polipo.conf
 
 	#set proxy name
 	sed -i -e 's/# proxyName = "polipo.example.org"/proxyName = "unRAID.Polipo"/' /config/polipo.conf
