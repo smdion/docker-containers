@@ -1,38 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
   <Name>DDClient</Name>
-  <Description>
-    This is a Dockerfile setup for DDClient. Client to update DynDNS service.
-
-Edit /config/ddclient.conf[br][br]
-    [b][span style='color: #E80000;']Directions:[/span][/b][br]
-    [b]/config[/b] : this path is used to store the configuration ddclient.[br]
-  </Description>
+  <Description>This is a Dockerfile setup for DDClient. Client to update DynDNS service.&#13;
+Edit /config/ddclient.conf[br][br]&#13;
+[b][span style=\'color: #E80000;\']Directions:[/span][/b][br]&#13;
+[b]/config[/b] : this path is used to store the configuration ddclient.[br]&#13;
+</Description>
   <Registry>https://registry.hub.docker.com/u/smdion/docker-ddclient/</Registry>
   <Repository>smdion/docker-ddclient</Repository>
   <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
+  <Environment/>
   <Networking>
-    <Mode>none</Mode>
-    <Publish>
-      <Port>
-        <HostPort></HostPort>
-        <ContainerPort></ContainerPort>
-        <Protocol></Protocol>
-      </Port>
-    </Publish>
+    <Mode>host</Mode>
+    <Publish/>
   </Networking>
-  <Environment>
-    <Variable>
-      <Name></Name>
-      <Value></Value>
-    </Variable>
-  </Environment>
   <Data>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/cache/appdata/ddclient/</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <Version>fc4ec9ea8858921c</Version>
+  <WebUI></WebUI>
+  <Banner></Banner>
+  <Icon></Icon>
 </Container>
