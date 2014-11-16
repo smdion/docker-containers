@@ -30,3 +30,8 @@ VOLUME /config
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
+
+# Add ddclient to runit
+RUN mkdir /etc/service/upsboard
+ADD ddclient.sh /etc/service/upsboard/run
+RUN chmod +x /etc/service/upsboard/run
