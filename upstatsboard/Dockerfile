@@ -30,6 +30,9 @@ RUN chown nobody:users /opt/UpsBoard-0.2.1
 #Set config.js to under config
 RUN ln -s /config/config.js /opt/UpsBoard-0.2.1/config.js
 
+#Set log file to /config/logs
+RUN ls -s /config/logs/debug.log /opt/UpsBoard-0.2.1/logs/debut.log
+
 #SET CONFIG directory
 VOLUME /config
 

@@ -9,3 +9,14 @@ else
   mv /config/config.js-sample /config/config.js
   chown nobody:users /config/config.js
 fi
+
+# Check if logs exists. If not, copy in the sample config
+if [ -f /config/logs/debug.log ]; then
+  echo "Using existing log file."
+else
+  echo "Creating log file"
+	if [[ ! -e /config/logs ]]; then
+		mkdir -p /config/logs
+		chown nobody:users /config/logs
+	fi
+fi
