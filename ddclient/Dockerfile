@@ -22,6 +22,7 @@ RUN apt-get install -qy ddclient
 
 #Set config.js to under config
 RUN mv /etc/ddclient.conf /etc/ddclient.conf-sample
+RUN rm /etc/default/ddclient.conf
 RUN ln -s /config/ddclient.conf /etc/ddclient.conf
 
 #SET CONFIG directory
