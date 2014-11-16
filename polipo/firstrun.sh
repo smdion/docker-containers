@@ -33,6 +33,7 @@ sed -i -e 's/# censorReferer = maybe/censorReferer = maybe/' /config/polipo.conf
 echo "serverExpireTime = 5d" >>/config/polipo.conf
 
 #only allow internal clients
+sed -i '23d' /config/polipo.conf
 sed -i -e 's|# allowedClients = 127.0.0.1|allowedClients = 127.0.0.1, 10.0.0.0/8, 172.16.0.0/12,192.168.0.0/16|' /config/polipo.conf
 
 #set proxy name
