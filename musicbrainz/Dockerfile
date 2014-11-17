@@ -27,6 +27,8 @@ RUN tar -C /opt/musicbrainz-server -xvf /tmp/v-2014-11-03.tar.gz --strip-compone
 #set config directory
 VOLUME /config
 
+EXPOSE 5000
+
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
