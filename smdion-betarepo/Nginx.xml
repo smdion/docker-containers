@@ -2,7 +2,7 @@
 <Container>
   <Name>Nginx</Name>
   <Description>
-    Reverse Proxy is a Apache based web server set up to act as a proxy with basic PHP web server capabilities[br][br]
+    nginx [engine x] is an HTTP and reverse proxy server, as well as a mail proxy server, written by Igor Sysoev[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : this path is used to store the configuration and the SSL certs files of the reverse proxy.[br]
     [b]/web[/b] : this path is the web directory[br]
@@ -35,12 +35,18 @@
   <Data>
     <Volume>
       <HostDir></HostDir>
-      <ContainerDir>/web</ContainerDir>
+      <ContainerDir>/var/log/nginx</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
         <Volume>
       <HostDir></HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <ContainerDir>/etc/nginx/certs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    </Volume>
+        <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/etc/nginx/sites-enabled</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
