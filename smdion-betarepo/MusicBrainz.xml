@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Name>DDClient</Name>
-  <Description>This is a Dockerfile setup for DDClient. Client to update DynDNS service.&#13;
-Edit /config/ddclient.conf[br][br]&#13;
+  <Name>MusicBrainz</Name>
+  <Description>This is a Dockerfile setup for MusicBrainz. &#13;
+Edit /config/dDBDefs.pm[br][br]&#13;
 [b][span style=\'color: #E80000;\']Directions:[/span][/b][br]&#13;
-[b]/config[/b] : this path is used to store the configuration ddclient.[br]&#13;
+[b]/config[/b] : this path is used to store the configuration MusicBrainz.[br]&#13;
 </Description>
   <Registry>https://registry.hub.docker.com/u/smdion/docker-ddclient/</Registry>
   <Repository>smdion/docker-ddclient</Repository>
@@ -13,11 +13,17 @@ Edit /config/ddclient.conf[br][br]&#13;
   <Environment/>
   <Networking>
     <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5000</HostPort>
+        <ContainerPort>5000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
     <Publish/>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/ddclient</HostDir>
+      <HostDir></HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
