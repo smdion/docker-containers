@@ -30,15 +30,6 @@ VOLUME /config
 
 EXPOSE 5000
 
-# Add firstrun.sh to execute during container startup
-ADD firstrun.sh /etc/my_init.d/firstrun.sh
-RUN chmod +x /etc/my_init.d/firstrun.sh
-
-# Add musicbrainz to runit
-RUN mkdir /etc/service/maraschino
-ADD musicbrainz.sh /etc/service/musicbrainz/run
-RUN chmod +x /etc/service/musicbrainz/run
-
 #Enable local::lib
 RUN echo 'eval $( perl -Mlocal::lib )' >> ~/.bashrc
 RUN source ~/.bashrc
@@ -55,3 +46,11 @@ RUN cd /opt/musicbrainz-server/postgresql-musicbrainz-collate && make && sudo ma
 #Create the database
 RUN ./opt/musicbrainz-server/admin/InitDb.pl --createdb --clean
 
+# Add firstrun.sh to execute during container startup
+ADD firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
+
+# Add musicbrainz to runit
+RUN mkdir /etc/service/maraschino
+ADD musicbrainz.sh /etc/service/musicbrainz/run
+RUN chmod +x /etc/service/musicbrainz/run
