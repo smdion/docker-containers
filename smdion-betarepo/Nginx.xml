@@ -38,13 +38,12 @@
       <ContainerDir>/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-        <Volume>
+    <Volume>
       <HostDir></HostDir>
       <ContainerDir>/certs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-    </Volume>
-        <Volume>
+    <Volume>
       <HostDir></HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
