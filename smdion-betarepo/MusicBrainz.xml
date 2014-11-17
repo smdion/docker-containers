@@ -4,7 +4,7 @@
   <Description>
     MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
-    [b]/config[/b] : this path is used to store the configuration and the SSL certs files of the reverse proxy.[br]
+    [b]/media/dbdump[/b] : Where the MusicBrainz database will be created.[br]
   </Description>
   <Registry>https://registry.hub.docker.com/u/smdion/musicbrainz-docker/</Registry>
   <Repository>smdion/musicbrainz-docker</Repository>
