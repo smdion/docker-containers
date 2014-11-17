@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Name></Name>Nginx</Name>
+  <Name>Nginx</Name>
   <Description>
     Reverse Proxy is a Apache based web server set up to act as a proxy with basic PHP web server capabilities[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
