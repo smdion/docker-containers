@@ -18,7 +18,7 @@ RUN add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg
 RUN apt-get update -q
 
 # Install Dependencies
-RUN apt-get install -qy perl postgresql-9.x postgresql-server-dev-9.x postgresql-contrib-9.x git-core memcached redis-server build-essential libxml2-dev libpq-dev libexpat1-dev libdb-dev libicu-dev liblocal-lib-perl cpanminus libicu-dev
+RUN apt-get install -qy perl postgresql-9.3 postgresql-server-dev-9.3 postgresql-contrib-9.3 git-core memcached redis-server build-essential libxml2-dev libpq-dev libexpat1-dev libdb-dev libicu-dev liblocal-lib-perl cpanminus libicu-dev
 
 # Install MusicBrainz=Server
 RUN mkdir /opt/musicbrainz-server
