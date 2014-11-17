@@ -7,8 +7,8 @@
     [b]/config[/b] : this path is used to store the configuration and the SSL certs files of the reverse proxy.[br]
     [b]/web[/b] : this path is the web directory[br]
   </Description>
-  <Registry>https://registry.hub.docker.com/u/smdion/docker-nginx/</Registry>
-  <Repository>smdion/docker-nginx</Repository>
+  <Registry>https://registry.hub.docker.com/u/smdion/musicbrainz-docker/</Registry>
+  <Repository>smdion/musicbrainz-docker</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Networking>
