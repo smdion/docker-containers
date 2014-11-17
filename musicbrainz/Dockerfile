@@ -22,6 +22,9 @@ RUN apt-get install -qy --force-yes wget perl postgresql-9.3 postgresql-server-d
 
 # Install MusicBrainz=Server
 RUN git clone -b master https://github.com/metabrainz/musicbrainz-server.git /opt/musicbrainz-server
+RUN git clone -b master https://github.com/metabrainz/postgresql-musicbrainz-collate.git /opt/musicbrainz-server/postgresql-musicbrainz-collate
+RUN git clone -b master https://github.com/metabrainz/postgresql-musicbrainz-unaccent.git /opt/musicbrainz-server/postgresql-musicbrainz-unaccent
+
 
 #set config directory
 VOLUME /config
