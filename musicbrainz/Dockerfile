@@ -44,9 +44,6 @@ RUN cd /opt/musicbrainz-server/postgresql-musicbrainz-unaccent && make && sudo m
 #Add collate extension
 RUN cd /opt/musicbrainz-server/postgresql-musicbrainz-collate && make && sudo make install
 
-#Create the database
-RUN ./opt/musicbrainz-server/admin/InitDb.pl --createdb --clean
-
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
