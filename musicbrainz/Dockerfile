@@ -32,7 +32,7 @@ EXPOSE 5000
 
 #Enable local::lib
 RUN echo 'eval $( perl -Mlocal::lib )' >> ~/.bashrc
-RUN source ~/.bashrc
+#RUN source ~/.bashrc
 
 #Install PERL dependencies
 RUN cpanm --installdeps --notest
