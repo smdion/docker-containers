@@ -21,9 +21,7 @@ RUN apt-get update -q
 RUN apt-get install -qy --force-yes wget perl postgresql-9.3 postgresql-server-dev-9.3 postgresql-contrib-9.3 git-core memcached redis-server build-essential libxml2-dev libpq-dev libexpat1-dev libdb-dev libicu-dev liblocal-lib-perl cpanminus libicu-dev
 
 # Install MusicBrainz=Server
-RUN mkdir /opt/musicbrainz-server
-RUN wget -P /tmp/ https://github.com/metabrainz/musicbrainz-server/archive/v-2014-11-03.tar.gz
-RUN tar -C /opt/musicbrainz-server -xvf /tmp/v-2014-11-03.tar.gz --strip-components 1
+RUN git clone -b nzbdrone https://github.com/metabrainz/musicbrainz-server.git /opt/musicbrainz-server
 
 #set config directory
 VOLUME /config
