@@ -35,17 +35,17 @@
   <Data>
     <Volume>
       <HostDir></HostDir>
-      <ContainerDir>/logs</ContainerDir>
+      <ContainerDir>/var/log/nginx</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
       <HostDir></HostDir>
-      <ContainerDir>/certs</ContainerDir>
+      <ContainerDir>/etc/nginx/certs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
       <HostDir></HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <ContainerDir>/etc/nginx/sites-enabled</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
