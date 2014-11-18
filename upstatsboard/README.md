@@ -7,4 +7,4 @@ All fields of /config/config.js must be filled out completely or deleted if not 
 
 Accessible at 0.0.0.0:8024 with correctly working config.  Logs output through docker if "runningmode" is set to debug in config.js
 
-    docker run -v /path/to/config:/config -p 8024:8024 -d --name upstatsboard smdion/docker-upstatsboard
+    docker run -v /path/to/config:/config -v /path/to/logs:/opt/UpsBoard-0.2.1/logs -p 8024:8024 -d --name upstatsboard smdion/docker-upstatsboard
