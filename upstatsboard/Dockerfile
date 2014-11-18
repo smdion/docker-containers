@@ -15,10 +15,11 @@ RUN usermod -g 100 nobody
 #add repositories
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse"
+RUN add-apt-repository ppa:dhor/myway
 RUN apt-get update -q
 
 # Install Dependencies
-RUN apt-get install -qy vnstat npm unrar wget
+RUN apt-get install -qy vnstat npm unrar wget graphicsmagick
 
 # Install UpStatsBoard v0.2.1
 RUN wget -P /tmp/ https://github.com/lienma/UpsBoard/archive/0.2.1.tar.gz
