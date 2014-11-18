@@ -32,5 +32,10 @@
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+        <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/UpsBoard-0.2.1/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
   </Data>
 </Container>
