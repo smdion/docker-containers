@@ -33,6 +33,9 @@ RUN ln -s /config/config.js /opt/UpsBoard-0.2.1/config.js
 #SET CONFIG directory
 VOLUME /config
 
+#Set Log directory
+VOLUME /opt/UpsBoard-0.2.1/logs
+
 #Create vnstat database
 RUN vnstat -u -i eth0
 
