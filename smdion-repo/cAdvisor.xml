@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
   <Name>cadvisor</Name>
-  <Description></Description>
-  <Registry></Registry>
+  <Description>cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers. It is a running daemon that collects, aggregates, processes, and exports information about running containers. Specifically, for each container it keeps resource isolation parameters, historical resource usage, and histograms of complete historical resource usage. This data is exported by container and machine-wide.</Description>
+  <Registry>https://registry.hub.docker.com/u/google/cadvisor/</Registry>
   <Repository>google/cadvisor:latest</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
@@ -23,6 +23,11 @@
     </Publish>
   </Networking>
   <Data>
+    <Volume>
+      <HostDir>/</HostDir>
+      <ContainerDir>/rootfs</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
     <Volume>
       <HostDir>/var/run</HostDir>
       <ContainerDir>/var/run</ContainerDir>
