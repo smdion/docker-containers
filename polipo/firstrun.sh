@@ -30,7 +30,7 @@ else
 
 	#set expire time
 	echo "" >>/config/polipo.conf
-	echo "#Server Expire Time" >>/config/polipo.conf
+	echo "# Server Expire Time" >>/config/polipo.conf
 	echo "serverExpireTime = 5d" >>/config/polipo.conf
 
 	#only allow internal clients
