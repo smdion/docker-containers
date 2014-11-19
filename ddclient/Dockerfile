@@ -18,7 +18,7 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates 
 RUN apt-get update -q
 
 # Install Dependencies
-RUN apt-get install -qy ddclient cpanminus
+RUN apt-get install -qy ddclient cpanminus make
 
 #Add required Dependencies for FreeDNS
 RUN cpanm Digest::SHA1
