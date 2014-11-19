@@ -32,6 +32,11 @@ else
 	echo "" >>/config/polipo.conf
 	echo "#Server Expire Time" >>/config/polipo.conf
 	echo "serverExpireTime = 5d" >>/config/polipo.conf
+	
+	#set logging
+	echo "" >>/config/polipo.conf
+	echo "#Set log file" >>/config/polipo.conf
+	echo "logFile = /config/logs/polipo.log" >>/config/polipo.conf
 
 	#only allow internal clients
 	sed -i '23d' /config/polipo.conf
