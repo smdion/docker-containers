@@ -21,7 +21,7 @@ RUN apt-get update -q
 RUN apt-get install -qy ddclient cpanminus make
 
 #Add required Dependencies for FreeDNS
-RUN cpanm Digest::SHA1
+RUN cpanm --force Digest::SHA1
 
 #Set config.js to under config
 RUN mv /etc/ddclient.conf /etc/ddclient.conf-sample
