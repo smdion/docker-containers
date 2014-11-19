@@ -37,6 +37,8 @@ else
 	echo "" >>/config/polipo.conf
 	echo "#Set log file" >>/config/polipo.conf
 	echo "logFile = /config/logs/polipo.log" >>/config/polipo.conf
+	mkdir -p /config/logs
+	touch /config/logs/polipo.log
 
 	#only allow internal clients
 	sed -i '23d' /config/polipo.conf
