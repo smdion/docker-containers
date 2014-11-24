@@ -24,11 +24,11 @@ VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/v
 # Define working directory.
 WORKDIR /etc/nginx
 
-# Define directory for nginx.conf
-VOLUME /nginxconf
-
 # Set config.js to under config
 RUN ln -s /nginxconf/nginx.conf /etc/nginx/nginx.conf
+
+# Define directory for nginx.conf
+VOLUME /nginxconf
 
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
