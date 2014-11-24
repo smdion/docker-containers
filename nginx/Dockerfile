@@ -35,7 +35,7 @@ EXPOSE 443
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
-# Add upsboard to runit
-RUN mkdir /etc/service/upsboard
-ADD nginx.sh /etc/service/upsboard/run
-RUN chmod +x /etc/service/upsboard/run
+# Add nginx to runit
+RUN mkdir /etc/service/nginx
+ADD nginx.sh /etc/service/nginx/run
+RUN chmod +x /etc/service/nginx/run
