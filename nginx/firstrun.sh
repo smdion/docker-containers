@@ -6,7 +6,7 @@ if [ -f /nginxconf/nginx.conf ]; then
 else
   echo "Creating config from template."
   cp /etc/nginx/nginx-template.conf /nginxconf/nginx.conf
-  echo "\ndaemon off;" >> /nginxconf/nginx.conf
+  echo "daemon off;" >> /nginxconf/nginx.conf
   chown nobody:users /nginxconf/nginx.conf
 fi
 
