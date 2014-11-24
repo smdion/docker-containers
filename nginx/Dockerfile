@@ -21,22 +21,21 @@ RUN \
 # Define mountable directories.
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx"]
 
-# Define working directory.
-WORKDIR /etc/nginx
-
 # Set config.js to under config
 RUN ln -s /nginxconf/nginx.conf /etc/nginx/nginx.conf
 
 # Define directory for nginx.conf
 VOLUME /nginxconf
 
+# Expose ports.
+EXPOSE 80
+EXPOSE 443
+
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
-# Define default command.
-CMD ["nginx"]
-
-# Expose ports.
-EXPOSE 80
-EXPOSE 443
+# Add upsboard to runit
+RUN mkdir /etc/service/upsboard
+ADD nginx.sh /etc/service/upsboard/run
+RUN chmod +x /etc/service/upsboard/run
