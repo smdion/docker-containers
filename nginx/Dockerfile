@@ -14,7 +14,7 @@ RUN \
   apt-get update && \
   apt-get install -y nginx && \
   rm -rf /var/lib/apt/lists/* && \
-  cp /etc/nginx/nginx.conf /etc/nginx/nginx.conftemp
+  cp /etc/nginx/nginx.conf /etc/nginx/nginx.conftemp  && \
   rm /etc/nginx/nginx.conf && \
   chown -R www-data:www-data /var/lib/nginx
 
