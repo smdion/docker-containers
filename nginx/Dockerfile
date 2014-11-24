@@ -26,8 +26,12 @@ WORKDIR /etc/nginx
 # Define directory for nginx.conf
 VOLUME /nginxconf
 
-#Set config.js to under config
+# Set config.js to under config
 RUN ln -s /nginxconf/nginx.conf /etc/nginx/nginx.conf
+
+# Add firstrun.sh to execute during container startup
+ADD firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Define default command.
 CMD ["nginx"]
