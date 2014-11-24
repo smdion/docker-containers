@@ -1,1 +1,3 @@
-nginx
+#!/bin/bash
+
+/etc/nginx/nginx
