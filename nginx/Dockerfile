@@ -14,7 +14,7 @@ RUN \
   apt-get update && \
   apt-get install -y nginx && \
   rm -rf /var/lib/apt/lists/* && \
-  echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
+  rm /etc/nginx/nginx.conf && \
   chown -R www-data:www-data /var/lib/nginx
 
 # Define mountable directories.
@@ -22,6 +22,12 @@ VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/v
 
 # Define working directory.
 WORKDIR /etc/nginx
+
+# Define directory for nginx.conf
+VOLUME /nginxconf
+
+#Set config.js to under config
+RUN ln -s /nginxconf/nginx.conf /etc/nginx/nginx.conf
 
 # Define default command.
 CMD ["nginx"]
