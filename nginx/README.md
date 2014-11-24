@@ -1,4 +1,4 @@
-##STILL IN TESTING
+
 Forked from: dockerfile / nginx
 
 ### Usage
