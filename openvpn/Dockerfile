@@ -1,9 +1,7 @@
 # Original credit: https://github.com/jpetazzo/dockvpn
 
-# Leaner build then Ubunutu
-FROM debian:jessie
-
-MAINTAINER Kyle Manna <kyle@kylemanna.com>
+FROM phusion/baseimage:0.9.11
+MAINTAINER smdion <smdion@gmail.com>
 
 RUN apt-get update && apt-get install -y openvpn iptables git-core
 
