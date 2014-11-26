@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#
+# Get an OpenVPN client configuration file
+#
+
+set -ex
+
+source "$OPENVPN/ovpn_env.sh"
+cn=$1
+
+if [ ! -f "$EASYRSA_PKI/private/${cn}.key" ]; then
+    echo "Unable to find ${cn}, please try again or generate the key first"
+    exit 1
+fi
+
+cat <<EOF
+client
+nobind
+dev tun
+remote-cert-tls server
+
+<key>
+$(cat $EASYRSA_PKI/private/${cn}.key)
+</key>
+<cert>
+$(cat $EASYRSA_PKI/issued/${cn}.crt)
+</cert>
+<ca>
+$(cat $EASYRSA_PKI/ca.crt)
+</ca>
+<dh>
+$(cat $EASYRSA_PKI/dh.pem)
+</dh>
+<tls-auth>
+$(cat $EASYRSA_PKI/ta.key)
+</tls-auth>
+key-direction 1
+
+<connection>
+remote $OVPN_CN $OVPN_PORT $OVPN_PROTO
+</connection>
+EOF
+
+if [ "$OVPN_DEFROUTE" != "0" ];then
+    echo "redirect-gateway def1"
+fi
