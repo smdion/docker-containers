@@ -28,7 +28,8 @@ RUN \
   tar -C /opt/ -xvf /tmp/0.2.1.tar.gz && \
   cd /opt/UpsBoard-0.2.1 && npm install && \
   chown nobody:users /opt/UpsBoard-0.2.1  && \
-  ln -s /config/config.js /opt/UpsBoard-0.2.1/config.js
+  ln -s /config/config.js /opt/UpsBoard-0.2.1/config.js && \
+  rm /tmp/0.2.1.tar.gz
 
 #SET CONFIG directory
 VOLUME ["/config", "/opt/UpsBoard-0.2.1/logs"]
