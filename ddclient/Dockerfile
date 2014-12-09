@@ -9,23 +9,22 @@ ENV HOME /root
 CMD ["/sbin/my_init"]
 
 # Fix a Debianism of the nobody's uid being 65534
-RUN usermod -u 99 nobody
-RUN usermod -g 100 nobody
+RUN \
+  usermod -u 99 nobody && \
+  usermod -g 100 nobody
 
-#add repositories
+# Install ddclient
 RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy ddclient cpanminus make gcc
+  apt-get install -qy ddclient cpanminus make gcc && \
+  rm -rf /var/lib/apt/lists/* && \
+  mv /etc/ddclient.conf /etc/ddclient.conf-sample && \
+  ln -s /config/ddclient.conf /etc/ddclient.conf
 
 #Add required Dependencies for FreeDNS
 RUN cpanm --sudo Digest::SHA1
-
-#Set config.js to under config
-RUN \
-  mv /etc/ddclient.conf /etc/ddclient.conf-sample && \
-  ln -s /config/ddclient.conf /etc/ddclient.conf
 
 #SET CONFIG directory
 VOLUME /config
