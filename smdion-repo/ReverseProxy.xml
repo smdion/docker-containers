@@ -49,4 +49,7 @@
       <Mode>ro</Mode>
     </Volume>
   </Data>
+    <WebUI></WebUI>
+  <Banner>http://i.imgur.com/l8aVJp4.jpg</Banner>
+  <Icon>http://i.imgur.com/M5pmW3X.png</Icon>
 </Container>
