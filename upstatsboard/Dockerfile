@@ -9,33 +9,29 @@ ENV HOME /root
 CMD ["/sbin/my_init"]
 
 # Fix a Debianism of the nobody's uid being 65534
-RUN usermod -u 99 nobody
-RUN usermod -g 100 nobody
+RUN \
+  usermod -u 99 nobody && \
+  usermod -g 100 nobody
 
-#add repositories
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse"
-RUN add-apt-repository ppa:dhor/myway
-RUN apt-get update -q
-
-# Install Dependencies
-RUN apt-get install -qy vnstat npm unrar wget graphicsmagick
+# Install UpStatsBoard
+RUN \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+  add-apt-repository ppa:dhor/myway && \
+  apt-get update -q && \
+  apt-get install -qy vnstat npm unrar wget graphicsmagick && \
+  rm -rf /var/lib/apt/lists/*
 
 # Install UpStatsBoard v0.2.1
-RUN wget -P /tmp/ https://github.com/lienma/UpsBoard/archive/0.2.1.tar.gz
-RUN tar -C /opt/ -xvf /tmp/0.2.1.tar.gz
-RUN cd /opt/UpsBoard-0.2.1 && npm install
-ADD . /opt/UpsBoard-0.2.1
-RUN chown nobody:users /opt/UpsBoard-0.2.1
-
-#Set config.js to under config
-RUN ln -s /config/config.js /opt/UpsBoard-0.2.1/config.js
+RUN \
+  wget -P /tmp/ https://github.com/lienma/UpsBoard/archive/0.2.1.tar.gz && \
+  tar -C /opt/ -xvf /tmp/0.2.1.tar.gz && \
+  cd /opt/UpsBoard-0.2.1 && npm install && \
+  chown nobody:users /opt/UpsBoard-0.2.1  && \
+  ln -s /config/config.js /opt/UpsBoard-0.2.1/config.js
 
 #SET CONFIG directory
-VOLUME /config
-
-#Set Log directory
-VOLUME /opt/UpsBoard-0.2.1/logs
+VOLUME ["/config", "/opt/UpsBoard-0.2.1/logs"]
 
 #Create vnstat database
 RUN vnstat -u -i eth0
