@@ -9,24 +9,30 @@ ENV HOME /root
 CMD ["/sbin/my_init"]
 
 # Fix a Debianism of the nobody's uid being 65534
-RUN usermod -u 99 nobody
-RUN usermod -g 100 nobody
+RUN \
+  usermod -u 99 nobody && \
+  usermod -g 100 nobody
 
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse"
-RUN apt-get update -q
-
-# Install Dependencies
-RUN apt-get install -qy python unrar wget python-psutil
-
-# Install HTPCManager v0.11.0
-RUN wget -P /tmp/ https://github.com/styxit/HTPC-Manager/archive/0.11.0.tar.gz
-RUN tar -C /opt/ -xvf /tmp/0.11.0.tar.gz
-ADD . /opt/HTPC-Manager-0.11.0
-RUN chown nobody:users /opt/HTPC-Manager-0.11.0
+RUN \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+  apt-get update -q && \
+  apt-get install -qy python unrar wget python-psutil && \
+  rm -rf /var/lib/apt/lists/*  && \
+  wget -P /tmp/ https://github.com/styxit/HTPC-Manager/archive/0.11.0.tar.gz  && \
+  tar -C /opt/ -xvf /tmp/0.11.0.tar.gz  && \
+  chown nobody:users /opt/HTPC-Manager-0.11.0  && \
 
 EXPOSE 8085
 
 VOLUME /config
 
-CMD python /opt/HTPC-Manager-0.11.0/Htpc.py --datadir /config
+# Add edge.sh to execute during container startup
+RUN mkdir -p /etc/my_init.d
+ADD edge.sh /etc/my_init.d/edge.sh
+RUN chmod +x /etc/my_init.d/edge.sh
+
+# Add htpcmanager to runit
+RUN mkdir /etc/service/htpcmanager
+ADD htpcmanager.sh /etc/service/htpcmanager/run
+RUN chmod +x /etc/service/htpcmanager/run
