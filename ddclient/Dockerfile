@@ -13,19 +13,19 @@ RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
 
 #add repositories
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse"
-RUN apt-get update -q
-
-# Install Dependencies
-RUN apt-get install -qy ddclient cpanminus make gcc
+RUN \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+  apt-get update -q && \
+  apt-get install -qy ddclient cpanminus make gcc
 
 #Add required Dependencies for FreeDNS
 RUN cpanm --sudo Digest::SHA1
 
 #Set config.js to under config
-RUN mv /etc/ddclient.conf /etc/ddclient.conf-sample
-RUN ln -s /config/ddclient.conf /etc/ddclient.conf
+RUN \
+  mv /etc/ddclient.conf /etc/ddclient.conf-sample && \
+  ln -s /config/ddclient.conf /etc/ddclient.conf
 
 #SET CONFIG directory
 VOLUME /config
