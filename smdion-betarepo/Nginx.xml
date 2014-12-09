@@ -54,4 +54,8 @@
       <Mode>ro</Mode>
     </Volume>
   </Data>
+    <Version></Version>
+  <WebUI></WebUI>
+  <Banner>http://i.imgur.com/lWT0eiI.png</Banner>
+  <Icon>http://i.imgur.com/nUNGslD.png</Icon>
 </Container>
