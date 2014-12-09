@@ -24,6 +24,6 @@ Edit /config/ddclient.conf[br][br]&#13;
   </Data>
   <Version></Version>
   <WebUI></WebUI>
-  <Banner></Banner>
-  <Icon></Icon>
+  <Banner>http://i.imgur.com/201b2sc.png</Banner>
+  <Icon>http://i.imgur.com/udDgFJQ.png</Icon>
 </Container>
