@@ -33,4 +33,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+    <WebUI></WebUI>
+  <Banner></Banner>
+  <Icon>http://i.imgur.com/YZq4E3v.png</Icon>
 </Container>
