@@ -9,20 +9,20 @@ ENV HOME /root
 CMD ["/sbin/my_init"]
 
 # Fix a Debianism of the nobody's uid being 65534
-RUN usermod -u 99 nobody
-RUN usermod -g 100 nobody
+RUN \
+  usermod -u 99 nobody && \
+  usermod -g 100 nobody
 
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse"
-RUN apt-get update -q
-
-# Install Dependencies
-RUN apt-get install -qy python unrar wget
-
-# Install Maraschino
-RUN mkdir /opt/maraschino
-RUN wget -P /tmp/ https://github.com/mrkipling/maraschino/archive/v0.3.0.tar.gz
-RUN tar -C /opt/maraschino -xvf /tmp/v0.3.0.tar.gz --strip-components 1
+RUN \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+  apt-get update -q && \
+  apt-get install -qy python unrar wget && \
+  rm -rf /var/lib/apt/lists/*  && \
+  mkdir /opt/maraschino && \
+  wget -P /tmp/ https://github.com/mrkipling/maraschino/archive/v0.3.0.tar.gz && \
+  tar -C /opt/maraschino -xvf /tmp/v0.3.0.tar.gz --strip-components 1 && \
+  rm /tmp/v0.3.0.tar.gz
 
 #set config directory
 VOLUME /config
