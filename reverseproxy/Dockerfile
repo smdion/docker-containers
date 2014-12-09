@@ -15,10 +15,11 @@ RUN \
 
 # Enable proxy
 RUN \
-  a2enmod proxy proxy_http proxy_ajp rewrite deflate headers proxy_balancer proxy_connect proxy_html ssl xml2enc && \
+  a2enmod proxy proxy_http proxy_ajp rewrite deflate headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
+RUN \
   service apache2 restart && \
   rm -R -f /var/www && \
-  ln -s /web /var/www && \
+  ln -s /web /var/www
 
 # Update apache configuration with this one
 RUN \
