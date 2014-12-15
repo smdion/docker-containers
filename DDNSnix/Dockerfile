@@ -20,7 +20,8 @@ RUN \
   apt-get update -q && \
   apt-get install -qy wget && \
   wget -P /tmp/ https://github.com/Robpol86/UnofficialDDNSnix/releases/download/v1.0.0/unofficialddns_1.0.0_all.deb && \
-  dpkg -i /tmp/https://github.com/Robpol86/UnofficialDDNSnix/releases/download/v1.0.0/unofficialddns_1.0.0_all.deb && \
+  dpkg -i /tmp/unofficialddns_1.0.0_all.deb && \
+  rm /tmp/unofficialddns_1.0.0_all.deb && \
   mv /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml-dist
   
 #Add Config Volume
