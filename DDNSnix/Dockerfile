@@ -22,7 +22,8 @@ RUN \
   wget -P /tmp/ https://github.com/Robpol86/UnofficialDDNSnix/releases/download/v1.0.0/unofficialddns_1.0.0_all.deb && \
   dpkg -i /tmp/unofficialddns_1.0.0_all.deb && \
   rm /tmp/unofficialddns_1.0.0_all.deb && \
-  mv /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml-dist
+  mv /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml-dist && \
+  ls -s /config/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml
   
 #Add Config Volume
 VOLUME /config
