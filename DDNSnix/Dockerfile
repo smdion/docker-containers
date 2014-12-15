@@ -24,7 +24,7 @@ RUN \
   rm /tmp/unofficialddns_1.0.0_all.deb && \
   cp /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS-dist.yaml  && \
   rm /etc/UnofficialDDNS.yaml && \
-  ln -s /usr/bin/env/python2.6 /usr/bin/env/python
+  ln -s /usr/bin/python2.6 /usr/bin/python
 
 
 #Add Config Volume
