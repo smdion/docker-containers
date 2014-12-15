@@ -19,7 +19,6 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
   apt-get install -qy python unrar wget python-psutil && \
-  rm -rf /var/lib/apt/lists/*  && \
   wget -P /tmp/ https://github.com/styxit/HTPC-Manager/archive/0.11.0.tar.gz  && \
   tar -C /opt/ -xvf /tmp/0.11.0.tar.gz  && \
   chown nobody:users /opt/HTPC-Manager-0.11.0  && \
