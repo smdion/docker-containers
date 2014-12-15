@@ -18,12 +18,14 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy python2 wget && \
+  apt-get install -qy python wget && \
   wget -P /tmp/ https://github.com/Robpol86/UnofficialDDNSnix/releases/download/v1.0.0/unofficialddns_1.0.0_all.deb && \
   dpkg -i /tmp/unofficialddns_1.0.0_all.deb && \
   rm /tmp/unofficialddns_1.0.0_all.deb && \
-  cp /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS-dist.yaml && \
-  rm /etc/UnofficialDDNS.yaml
+  cp /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS-dist.yaml  && \
+  rm /etc/UnofficialDDNS.yaml && \
+  ln -s /usr/bin/env/python2.6 /usr/bin/env/python
+
 
 #Add Config Volume
 VOLUME /config
