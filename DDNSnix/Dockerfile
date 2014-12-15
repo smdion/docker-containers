@@ -15,7 +15,7 @@ RUN \
 
 #Install DDNSnix
 RUN \
-  ln -s /usr/bin/python2.6 /usr/bin/python && \
+  ln -s /usr/bin/python /usr/local/bin/python2.6 && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
