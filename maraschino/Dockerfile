@@ -18,7 +18,6 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
   apt-get install -qy python unrar wget && \
-  rm -rf /var/lib/apt/lists/*  && \
   mkdir /opt/maraschino && \
   wget -P /tmp/ https://github.com/mrkipling/maraschino/archive/v0.3.0.tar.gz && \
   tar -C /opt/maraschino -xvf /tmp/v0.3.0.tar.gz --strip-components 1 && \
