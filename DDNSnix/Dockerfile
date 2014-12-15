@@ -23,7 +23,9 @@ RUN \
   dpkg -i /tmp/unofficialddns_1.0.0_all.deb && \
   rm /tmp/unofficialddns_1.0.0_all.deb && \
   cp /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS-dist.yaml && \
-  rm /etc/UnofficialDDNS.yaml && \
+  rm /etc/UnofficialDDNS.yaml
+  
+RUN \
   ls -s /config/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml
   
 #Add Config Volume
