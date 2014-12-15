@@ -15,11 +15,11 @@ RUN \
 
 #Install DDNSnix
 RUN \
-  ln -s /usr/bin/python /usr/local/bin/python2.6 && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+  add-apt-repository ppa:fkrull/deadsnakes && \
   apt-get update -q && \
-  apt-get install -qy python wget && \
+  apt-get install -qy python2.6 wget && \
   wget -P /tmp/ https://github.com/Robpol86/UnofficialDDNSnix/releases/download/v1.0.0/unofficialddns_1.0.0_all.deb && \
   dpkg -i /tmp/unofficialddns_1.0.0_all.deb && \
   rm /tmp/unofficialddns_1.0.0_all.deb && \
