@@ -29,7 +29,7 @@ RUN \
 VOLUME /config
   
 RUN \
-  ls -s /config/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml
+  ln -s /config/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml
 
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
