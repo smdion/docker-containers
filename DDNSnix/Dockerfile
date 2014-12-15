@@ -15,6 +15,7 @@ RUN \
 
 #Install DDNSnix
 RUN \
+  ln -s /usr/bin/python2.6 /usr/bin/python && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
@@ -23,9 +24,7 @@ RUN \
   dpkg -i /tmp/unofficialddns_1.0.0_all.deb && \
   rm /tmp/unofficialddns_1.0.0_all.deb && \
   cp /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS-dist.yaml  && \
-  rm /etc/UnofficialDDNS.yaml && \
-  ln -s /usr/bin/python2.6 /usr/bin/python
-
+  rm /etc/UnofficialDDNS.yaml
 
 #Add Config Volume
 VOLUME /config
