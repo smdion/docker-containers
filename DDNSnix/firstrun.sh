@@ -6,4 +6,5 @@ if [ -f /config/UnofficialDDNS.yaml ]; then
 else
   echo "Creating config from template."
   mv /etc/UnofficialDDNS-dist.yaml /config/UnofficialDDNS.yaml
+  chmod 640 /etc/UnofficialDDNS-dist.yaml
 fi
