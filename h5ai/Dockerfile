@@ -37,6 +37,7 @@ RUN \
 ADD App.php.patch App.php.patch
 RUN patch -p1 -u -d /usr/share/h5ai/_h5ai/server/php/inc/ -i /App.php.patch && \
   rm App.php.patch
+RUN cp /usr/share/h5ai/_h5ai/conf/options.json /usr/share/h5ai/_h5ai/conf/options.json.bak
 RUN rm /usr/share/h5ai/_h5ai/conf/options.json
 RUN ln -s /config/options.json /usr/share/h5ai/_h5ai/conf/options.json
 
