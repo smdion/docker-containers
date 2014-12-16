@@ -5,5 +5,5 @@ then
     echo "Running"
 else
     service UnofficialDDNS start
-    ech "Started Service"
+    echo "Started Service"
 fi
