@@ -21,6 +21,8 @@ CMD ["/sbin/my_init"]
 # Disable SSH
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
+# install h5ai and patch configuration
+
 RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
@@ -28,9 +30,6 @@ RUN \
   apt-get install -qy nginx php5-fpm wget unzip patch && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
-
-# install h5ai and patch configuration
-RUN \
   wget http://release.larsjung.de/h5ai/h5ai-0.24.1.zip && \
   unzip h5ai-0.24.1.zip -d /usr/share/h5ai
 
