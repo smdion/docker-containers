@@ -40,15 +40,16 @@ RUN \
   ln -s /config/config.js /opt/UpsBoard-0.2.1/config.js && \
   rm /tmp/0.2.1.tar.gz
 
-#SET CONFIG directory
+# SET CONFIG directory
 VOLUME ["/config", "/opt/UpsBoard-0.2.1/logs"]
 
-#Create vnstat database
+# Create vnstat database
 RUN vnstat -u -i eth0
 
+# Expose ports
 EXPOSE 8024
 
-#set VNSTAT init script
+# set VNSTAT init script
 ADD vnstat /tmp/vnstat
 RUN cp /tmp/vnstat /etc/init.d
 RUN service vnstat start
