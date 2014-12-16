@@ -46,6 +46,8 @@ ADD h5ai.nginx.conf /etc/nginx/sites-available/h5ai
 RUN ln -s /etc/nginx/sites-available/h5ai /etc/nginx/sites-enabled/h5ai
 RUN rm /etc/nginx/sites-enabled/default
 
+WORKDIR /var/www
+
 # expose only nginx HTTP port
 EXPOSE 80
 
