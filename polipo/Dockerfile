@@ -28,7 +28,7 @@ RUN \
   apt-get update -q && \
   apt-get install -qy polipo && \
   apt-get clean -y && \
-  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/lib/apt/lists/*
 
 #SET CONFIG directory
 VOLUME /config
