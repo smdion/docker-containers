@@ -37,7 +37,7 @@ RUN \
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
-# Add htpcmanager to runit
+# Add UnofficialDDNS to runit
 RUN mkdir /etc/service/ddnsnix
 ADD ddnsnix.sh /etc/service/ddnsnix/run
 RUN chmod +x /etc/service/ddnsnix/run
