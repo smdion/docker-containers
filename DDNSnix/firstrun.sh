@@ -7,5 +7,5 @@ else
   echo "Creating config from template."
   mv /etc/UnofficialDDNS-dist.yaml /config/UnofficialDDNS.yaml
   chown root:uddns /config/UnofficialDDNS.yaml
-  chmod 640 /config/UnofficialDDNS.yaml
+  chmod 777 /config/UnofficialDDNS.yaml
 fi
