@@ -1,17 +1,25 @@
-FROM phusion/baseimage:0.9.11
-MAINTAINER smdion <smdion@gmail.com>
-ENV DEBIAN_FRONTEND noninteractive
+FROM phusion/baseimage:0.9.15
+MAINTAINER smdion <me@seandion.com>
 
 # Set correct environment variables
 ENV HOME /root
+ENV DEBIAN_FRONTEND noninteractive
+ENV LC_ALL C.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
-# Fix a Debianism of the nobody's uid being 65534
-RUN \
-  usermod -u 99 nobody && \
-  usermod -g 100 nobody
+# Configure user nobody to match unRAID's settings
+ RUN \
+ usermod -u 99 nobody && \
+ usermod -g 100 nobody && \
+ usermod -d /home nobody && \
+ chown -R nobody:users /home
+
+# Disable SSH
+RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Install ddclient
 RUN \
@@ -19,6 +27,7 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
   apt-get install -qy ddclient cpanminus make gcc && \
+  apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
   mv /etc/ddclient.conf /etc/ddclient.conf-sample && \
   ln -s /config/ddclient.conf /etc/ddclient.conf
@@ -26,7 +35,7 @@ RUN \
 #Add required Dependencies for FreeDNS
 RUN cpanm --sudo Digest::SHA1
 
-#SET CONFIG directory
+# Expose Volumes
 VOLUME /config
 
 # Add firstrun.sh to execute during container startup
@@ -34,6 +43,6 @@ ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Add ddclient to runit
-RUN mkdir /etc/service/upsboard
-ADD ddclient.sh /etc/service/upsboard/run
-RUN chmod +x /etc/service/upsboard/run
+RUN mkdir /etc/service/ddclient
+ADD ddclient.sh /etc/service/ddclient/run
+RUN chmod +x /etc/service/ddclient/run
