@@ -24,8 +24,10 @@ RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 # Install proxy Dependencies
 RUN \
   apt-get update -q && \
-  apt-get install -qy apache2 php5 libapache2-mod-php5 wget libapache2-mod-proxy-html
-
+  apt-get install -qy apache2 php5 libapache2-mod-php5 wget libapache2-mod-proxy-html && \
+  apt-get clean -y && \
+  rm -rf /var/lib/apt/lists/*
+  
 # Enable proxy
 RUN \
   a2enmod proxy proxy_http proxy_ajp rewrite deflate headers proxy_balancer proxy_connect proxy_html ssl xml2enc 

@@ -28,6 +28,7 @@ RUN \
   add-apt-repository ppa:dhor/myway && \
   apt-get update -q && \
   apt-get install -qy vnstat npm unrar wget graphicsmagick && \
+  apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
 # Install UpStatsBoard v0.2.1

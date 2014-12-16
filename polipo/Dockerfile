@@ -26,7 +26,9 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy polipo
+  apt-get install -qy polipo && \
+  apt-get clean -y && \
+  rm -rf /var/lib/apt/lists/* && \
 
 #SET CONFIG directory
 VOLUME /config

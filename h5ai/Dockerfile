@@ -25,7 +25,9 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy nginx php5-fpm wget unzip patch
+  apt-get install -qy nginx php5-fpm wget unzip patch && \
+  apt-get clean -y && \
+  rm -rf /var/lib/apt/lists/* && \
 
 # install h5ai and patch configuration
 RUN \

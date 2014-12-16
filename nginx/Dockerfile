@@ -26,6 +26,7 @@ RUN \
   add-apt-repository -y ppa:nginx/stable && \
   apt-get update && \
   apt-get install -y nginx && \
+  apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
   cp /etc/nginx/nginx.conf /etc/nginx/nginx-template.conf  && \
   rm /etc/nginx/nginx.conf && \
