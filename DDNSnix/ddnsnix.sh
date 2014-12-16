@@ -1,3 +1,3 @@
 #!/bin/bash
 
-service UnofficialDDNS start
+python /etc/UnofficialDDNS.py -d
