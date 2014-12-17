@@ -66,9 +66,9 @@ ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Add inotify.sh to execute during container startup
-ADD inotify.sh /tmp/inotify.sh
-RUN chmod +x /tmp/inotify.sh
-RUN /tmp/inotify.sh
+RUN mkdir /etc/service/inotify
+ADD inotify.sh /etc/service/inotify/run
+RUN chmod +x /etc/service/inotify/run
 
 # Add apache to runit
 RUN mkdir /etc/service/apache
