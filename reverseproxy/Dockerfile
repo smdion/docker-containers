@@ -65,7 +65,7 @@ VOLUME ["/config", "/web"]
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
-# Add inotify.sh to execute during container startup
+# Add svscanboot.sh to execute during container startup
 RUN mkdir /etc/service/svscanboot
 ADD svscanboot.sh /etc/service/svscanboot/run
 RUN chmod +x /etc/service/svscanboot/run
