@@ -59,8 +59,9 @@ ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Add inotify.sh to execute during container startup
-ADD inotify.sh /etc/my_init.d/inotify.sh
-RUN chmod +x /etc/my_init.d/inotify.sh
+RUN mkdir /etc/service/inotify
+ADD inotify.sh /etc/service/inotify/run
+RUN chmod +x /etc/service/inotify/run
 
 # Add upsboard to runit
 RUN mkdir /etc/service/upsboard
