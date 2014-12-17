@@ -72,7 +72,7 @@ RUN chmod +x /etc/service/inotify/run
 
 # Add apache to runit
 RUN mkdir /etc/service/apache
-ADD apaches.sh /etc/service/apache/run
+ADD apache-run.sh /etc/service/apache/run
 RUN chmod +x /etc/service/apache/run
-ADD apachef.sh /etc/service/apache/finish
+ADD apache-finish.sh /etc/service/apache/finish
 RUN chmod +x /etc/service/apache/finish
