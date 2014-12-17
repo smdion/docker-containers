@@ -1,7 +1,7 @@
 #!/bin/sh
 
 while inotifywait -e modify /config; do
-    killall -2 UnofficialDDNS
-    service UnofficialDDNS start
+    sv down /etc/service/ddnsnix/
+    sv up /etc/service/ddnsnix/
     echo "File in Config Folder Changed, Restarted"
 done
