@@ -52,5 +52,7 @@ RUN chmod +x /etc/service/inotify/run
 
 # Add nginx to runit
 RUN mkdir /etc/service/nginx
-ADD nginx.sh /etc/service/nginx/run
+ADD nginx-run.sh /etc/service/nginx/run
 RUN chmod +x /etc/service/nginx/run
+ADD nginx-finish.sh /etc/service/nginx/finish
+RUN chmod +x /etc/service/nginx/finish
