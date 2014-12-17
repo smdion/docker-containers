@@ -47,5 +47,7 @@ RUN chmod +x /etc/service/inotify/run
 
 # Add polipo to runit
 RUN mkdir /etc/service/polipo
-ADD polipo.sh /etc/service/polipo/run
+ADD polipo-run.sh /etc/service/polipo/run
 RUN chmod +x /etc/service/polipo/run
+ADD polipo-finish.sh /etc/service/polipo/finish
+RUN chmod +x /etc/service/polipo/finish
