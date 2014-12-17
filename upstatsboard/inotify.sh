@@ -1,7 +1,7 @@
 #!/bin/sh
 
 while inotifywait -e modify /config; do
-    killall -2 app
-    nodejs /opt/UpsBoard-0.2.1/app.js
+    sv down /etc/service/upsboard/
+    sv up /etc/service/upsboard/
     echo "File in Config Folder Changed, Restarted"
 done
