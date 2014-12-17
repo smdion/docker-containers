@@ -65,11 +65,11 @@ VOLUME ["/config", "/web"]
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
+# Add inotify.sh to execute during container startup
+ADD inotify.sh /tmp/inotify.sh
+RUN /tmp/inotify.sh
+
 # Add apache to runit
 RUN mkdir /etc/service/apache
 ADD apache.sh /etc/service/apache/run
 RUN chmod +x /etc/service/apache/run
-
-# Add inotify.sh to execute during container startup
-ADD inotify.sh /etc/my_init.d/inotify.sh
-RUN chmod +x /etc/my_init.d/inotify.sh
