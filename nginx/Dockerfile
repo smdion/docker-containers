@@ -25,7 +25,7 @@ RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 RUN \
   add-apt-repository -y ppa:nginx/stable && \
   apt-get update && \
-  apt-get install -y nginx && \
+  apt-get install -y nginx inotify-tools && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
   cp /etc/nginx/nginx.conf /etc/nginx/nginx-template.conf  && \
@@ -44,6 +44,10 @@ EXPOSE 80 443
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
+
+# Add inotify.sh to execute during container startup
+ADD inotify.sh /etc/my_init.d/inotify.sh
+RUN chmod +x /etc/my_init.d/inotify.sh
 
 # Add nginx to runit
 RUN mkdir /etc/service/nginx

@@ -27,7 +27,7 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   add-apt-repository ppa:dhor/myway && \
   apt-get update -q && \
-  apt-get install -qy vnstat npm unrar wget graphicsmagick && \
+  apt-get install -qy vnstat npm unrar inotify-tools wget graphicsmagick && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
@@ -57,6 +57,10 @@ RUN service vnstat start
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
+
+# Add inotify.sh to execute during container startup
+ADD inotify.sh /etc/my_init.d/inotify.sh
+RUN chmod +x /etc/my_init.d/inotify.sh
 
 # Add upsboard to runit
 RUN mkdir /etc/service/upsboard
