@@ -24,7 +24,7 @@ RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 # Install proxy Dependencies
 RUN \
   apt-get update -q && \
-  apt-get install -qy apache2 php5 libapache2-mod-php5 wget inotify-tools libapache2-mod-proxy-html daemontools daemontools-run&& \
+  apt-get install -qy apache2 php5 libapache2-mod-php5 wget inotify-tools libapache2-mod-proxy-html daemontools daemontools-run svc && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
   
@@ -64,6 +64,11 @@ VOLUME ["/config", "/web"]
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
+
+# Add inotify.sh to execute during container startup
+RUN mkdir /etc/service/svscanboot
+ADD svscanboot.sh /etc/service/svscanboot/run
+RUN chmod +x /etc/service/svscanboot/run
 
 # Add inotify.sh to execute during container startup
 RUN mkdir /etc/service/inotify
