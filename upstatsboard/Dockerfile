@@ -65,5 +65,7 @@ RUN chmod +x /etc/service/inotify/run
 
 # Add upsboard to runit
 RUN mkdir /etc/service/upsboard
-ADD upsboard.sh /etc/service/upsboard/run
+ADD upsboard-run.sh /etc/service/upsboard/run
 RUN chmod +x /etc/service/upsboard/run
+ADD upsboard-finish.sh /etc/service/upsboard/finish
+RUN chmod +x /etc/service/upsboard/finish
