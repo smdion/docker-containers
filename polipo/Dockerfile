@@ -26,7 +26,7 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy polipo && \
+  apt-get install -qy polipo inotify-tools && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
@@ -39,6 +39,10 @@ EXPOSE 8123
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
+
+# Add inotify.sh to execute during container startup
+ADD inotify.sh /etc/my_init.d/inotify.sh
+RUN chmod +x /etc/my_init.d/inotify.sh
 
 # Add polipo to runit
 RUN mkdir /etc/service/polipo
