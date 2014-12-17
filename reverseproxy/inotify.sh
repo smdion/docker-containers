@@ -1,7 +1,7 @@
 #!/bin/sh
 
 while inotifywait -e modify /config; do
-    runsv apache -k
-    runsv apache
+    runsv /etc/services/apache -k
+    runsv /etc/services/apache
     echo "File in Config Folder Changed, Restarted"
 done
