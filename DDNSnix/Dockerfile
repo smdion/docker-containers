@@ -48,5 +48,7 @@ RUN chmod +x /etc/service/inotify/run
 
 # Add ddnsnix to runit
 RUN mkdir /etc/service/ddnsnix
-ADD ddnsnix.sh /etc/service/ddnsnix/run
+ADD ddnsnix-run.sh /etc/service/ddnsnix/run
 RUN chmod +x /etc/service/ddnsnix/run
+ADD ddnsnix-finish.sh /etc/service/ddnsnix/finish
+RUN chmod +x /etc/service/ddnsnix/finish
