@@ -1,6 +1,7 @@
 #!/bin/sh
 
 while inotifywait -e modify /config; do
-    service UnofficialDDNS restart
+    killall -2 UnofficialDDNS
+    service UnofficialDDNS start
     echo "File in Config Folder Changed, Restarted"
 done
