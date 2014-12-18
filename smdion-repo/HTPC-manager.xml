@@ -39,6 +39,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-    <Banner>http://i.imgur.com/chCQ304.jpg</Banner>
+  <WebUI>http://[IP]:[PORT:8085]/</WebUI>
+  <Banner>http://i.imgur.com/chCQ304.jpg</Banner>
   <Icon>http://i.imgur.com/chCQ304.jpg</Icon>
 </Container>
