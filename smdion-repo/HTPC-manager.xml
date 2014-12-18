@@ -5,6 +5,8 @@
     HTPC-Manager allows you to manage your hHTPC from anywhere[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : this path is used to store the configuration and the database files of HTPC-Manager.[br]
+    [b]NZBDRONE[/b] : Add "1" to the Variable Value without the quotes to use the NZBDrone version (Cannot use both NZBDRONE and EDGE) [br]
+    [b]EDGE[/b] : Add "1" to the Variable Value without the quotes to use the EDGE version (Cannot use both NZBDRONE and EDGE) [br]
   </Description>
   <Registry>https://registry.hub.docker.com/u/smdion/docker-htpcmanager/</Registry>
   <Repository>smdion/docker-htpcmanager</Repository>
