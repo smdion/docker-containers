@@ -22,7 +22,11 @@
   </Networking>
   <Environment>
     <Variable>
-      <Name></Name>
+      <Name>NZBDRONE</Name>
+      <Value></Value>
+    </Variable>
+        <Variable>
+      <Name>EDGE</Name>
       <Value></Value>
     </Variable>
   </Environment>
