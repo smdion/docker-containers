@@ -5,7 +5,8 @@
     Maraschino a simple web interface to act as a nice overview/front page for my XBMC HTPC[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : this path is used to store the configuration and the database files of Maraschino.[br]
-    [b]NZBDRONE[/b] : Add "1" to the Variable Value without the quotes to use the NZBDrone version [br]
+    [b]NZBDRONE[/b] : Add "1" to the Variable Value without the quotes to use the NZBDRONE version (Cannot use both NZBDRONE and PLEX) [br]
+    [b]PLEX[/b] : Add "1" to the Variable Value without the quotes to use the PLEX version (Cannot use both NZBDRONE and PLEX) [br]
   </Description>
   <Registry>https://registry.hub.docker.com/u/smdion/docker-maraschino/</Registry>
   <Repository>smdion/docker-maraschino</Repository>
