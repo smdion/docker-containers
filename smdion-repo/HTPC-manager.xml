@@ -39,4 +39,6 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+    <Banner></Banner>
+  <Icon>http://i.imgur.com/chCQ304.jpg</Icon>
 </Container>
