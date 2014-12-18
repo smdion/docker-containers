@@ -44,6 +44,11 @@ RUN mkdir -p /etc/my_init.d
 ADD edge.sh /etc/my_init.d/edge.sh
 RUN chmod +x /etc/my_init.d/edge.sh
 
+# Add nzbdrone.sh to execute during container startup
+RUN mkdir -p /etc/my_init.d
+ADD nzbdrone.sh /etc/my_init.d/nzbdrone.sh
+RUN chmod +x /etc/my_init.d/nzbdrone.sh
+
 # Add htpcmanager to runit
 RUN mkdir /etc/service/htpcmanager
 ADD htpcmanager.sh /etc/service/htpcmanager/run
