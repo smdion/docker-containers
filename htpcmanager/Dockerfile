@@ -30,7 +30,6 @@ RUN \
   wget -P /tmp/ https://github.com/styxit/HTPC-Manager/archive/0.11.0.tar.gz  && \
   tar -C /opt/ -xvf /tmp/0.11.0.tar.gz  && \
   chown nobody:users /opt/HTPC-Manager-0.11.0  && \
-  rm -rf /var/lib/apt/lists/* && \
   rm /tmp/0.11.0.tar.gz
 
 #Expose Ports
