@@ -42,4 +42,5 @@
     <WebUI></WebUI>
   <Banner></Banner>
   <Icon>http://i.imgur.com/YZq4E3v.png</Icon>
+  <WebUI>http://[IP]:[PORT:7000]/</WebUI>
 </Container>
