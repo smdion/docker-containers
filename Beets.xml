@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>Beets</Name>
+  <Description>
+    This is a Dockerfile for "beets" - (http://beets.radbox.org/) On github, in the src folder you will find "SABbeets.sh" which is the script that will run beets from this container. It assumes you are running all containers with the network stack being shared with the host.[br][br]
+    [b][span style='color: #E80000;']Directions:[/span][/b][br]
+    [b]/config[/b] : Where the config file will be created.[br]
+    [b]/opt/downloads/music[/b] : Location of music.[br]
+    [b]/opt/tmp[/b] : Location of incomplete downloads, or incoming downloads, or music to be tagged.[br]
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/smdion/docker-beets/</Registry>
+  <Repository>smdion/docker-beets</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>4022</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name></Name>
+      <Value></Value>
+    </Variable>
+  </Environment>
+  <Data>
+     <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/downloads/music</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume> 
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/opt/tmp</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume> 
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/etc/localtime</HostDir>
+      <ContainerDir>/etc/localtime</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Icon></Icon>
+  <Banner></Banner>
+</Container>
