@@ -22,8 +22,6 @@ ADD src/fpcalc /usr/bin/fpcalc
 ADD src/ffmpeg /usr/bin/ffmpeg
 ADD src/ffprobe /usr/bin/ffprobe
 ADD src/lame /usr/bin/lame
-ADD ./start.sh /start.sh
-RUN chmod u+x  /start.sh
 
 VOLUME /config
 VOLUME /opt/downloads/music
@@ -31,10 +29,12 @@ VOLUME /opt/tmp
 
 EXPOSE 4022
 
-# docker build error RUN mkdir /var/run/sshd
 RUN echo 'root:screencast' | chpasswd
 RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
 
-ENTRYPOINT ["/start.sh"]
+# Add beets to runit
+RUN mkdir /etc/service/beets
+ADD start.sh /etc/service/beets/run
+RUN chmod +x /etc/service/beets/run
