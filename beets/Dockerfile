@@ -18,6 +18,7 @@ RUN apt-get install -qy --force-yes python-dev python-pip openssh-server mp3gain
 RUN yes | pip install beets
 RUN yes | pip install pyacoustid
 RUN yes | pip install pylast
+RUN yes | pip install flask
 ADD src/fpcalc /usr/bin/fpcalc
 ADD src/ffmpeg /usr/bin/ffmpeg
 ADD src/ffprobe /usr/bin/ffprobe
