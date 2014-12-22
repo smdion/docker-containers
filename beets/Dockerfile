@@ -14,7 +14,7 @@ RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get -qy --force-yes dist-upgrade
 
 # install beets and dependecies
-RUN apt-get install -qy --force-yes python-dev python-pip openssh-server mp3gain
+RUN apt-get install -qy --force-yes python-dev python-pip openssh-server mp3gain wget
 RUN yes | pip install beets
 RUN yes | pip install pyacoustid
 RUN yes | pip install pylast
