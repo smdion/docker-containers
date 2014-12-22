@@ -31,7 +31,7 @@ VOLUME /opt/tmp
 
 EXPOSE 4022
 
-RUN mkdir /var/run/sshd
+# docker build error RUN mkdir /var/run/sshd
 RUN echo 'root:screencast' | chpasswd
 RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
