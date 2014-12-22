@@ -34,6 +34,10 @@ RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
 
+# Add firstrun.sh to execute during container startup
+ADD firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
+
 # Add beets to runit
 RUN mkdir /etc/service/beets
 ADD start.sh /etc/service/beets/run
