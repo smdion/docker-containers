@@ -40,5 +40,5 @@ RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Add beets to runit
 RUN mkdir /etc/service/beets
-ADD start.sh /etc/service/beets/run
+ADD beets-run.sh /etc/service/beets/run
 RUN chmod +x /etc/service/beets/run
