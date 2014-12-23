@@ -32,7 +32,7 @@ RUN \
   chown nobody:users /opt/HTPC-Manager-0.11.0  && \
   rm /tmp/0.11.0.tar.gz && \
   wget -P /tmp/ http://downloads.sourceforge.net/project/openjpeg.mirror/2.0.1/openjpeg-2.0.1.tar.gz && \
-  tar /tmp/xzvf openjpeg-2.0.1.tar.gz && \
+  tar -xzvf /tmp/openjpeg-2.0.1.tar.gz && \
   cd /tmp/openjpeg-2.0.1/ && \
   sudo apt-get install cmake && \
   cmake . && \
