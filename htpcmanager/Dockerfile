@@ -26,13 +26,11 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy python unrar wget python-psutil python-pip libtiff5-dev libjpeg8-dev zlib1g-dev \
-   libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk && \
+  apt-get install -qy python unrar wget python-psutil python-imaging && \
   wget -P /tmp/ https://github.com/styxit/HTPC-Manager/archive/0.11.0.tar.gz  && \
   tar -C /opt/ -xvf /tmp/0.11.0.tar.gz  && \
   chown nobody:users /opt/HTPC-Manager-0.11.0  && \
   rm /tmp/0.11.0.tar.gz && \
-  yes | pip install Pillow
 
 #Expose Ports
 EXPOSE 8085
