@@ -24,9 +24,7 @@ ADD src/ffmpeg /usr/bin/ffmpeg
 ADD src/ffprobe /usr/bin/ffprobe
 ADD src/lame /usr/bin/lame
 
-VOLUME /config
-VOLUME /opt/downloads/music
-VOLUME /opt/tmp
+VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
 
 EXPOSE 4022
 
