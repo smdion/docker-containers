@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Check if beets.sh exists. If not, copy in
 if [ -f /config/beets.sh ]; then
   echo "Using existing config file."
