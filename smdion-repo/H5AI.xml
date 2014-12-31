@@ -39,4 +39,8 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+    <Icon>http://i.imgur.com/SxqiOrd.png</Icon>
+    <Banner>http://i.imgur.com/SxqiOrd.png</Banner>
+  <WebUI>/</WebUI>
+  
 </Container>
