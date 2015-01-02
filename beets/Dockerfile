@@ -14,7 +14,7 @@ RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get -qy --force-yes dist-upgrade
 
 RUN mkdir -p /root/.config
-RUN ln -s /config /root/.config/beets
+RUN ln -s /config/config.yaml /root/.config/beets/config.yaml
 
 # install beets and dependecies
 RUN apt-get install -qy --force-yes python-dev python-pip  mp3gain wget
