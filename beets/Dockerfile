@@ -14,7 +14,7 @@ RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get -qy --force-yes dist-upgrade
 
 # install beets and dependecies
-RUN apt-get install -qy --force-yes python-dev python-pip openssh-server mp3gain wget
+RUN apt-get install -qy --force-yes python-dev python-pip  mp3gain wget
 RUN yes | pip install beets
 RUN yes | pip install pyacoustid
 RUN yes | pip install pylast
@@ -26,11 +26,6 @@ ADD src/lame /usr/bin/lame
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
 
 EXPOSE 4022
-
-RUN echo 'root:screencast' | chpasswd
-RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
 
 RUN mkdir -p /root/.config
 RUN ln -s /config /root/.config/beets
