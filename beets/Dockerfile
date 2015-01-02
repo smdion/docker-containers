@@ -25,7 +25,6 @@ ADD src/fpcalc /usr/bin/fpcalc
 ADD src/ffmpeg /usr/bin/ffmpeg
 ADD src/ffprobe /usr/bin/ffprobe
 ADD src/lame /usr/bin/lame
-ADD src/config.yaml /root/.config/beets
 
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
 
