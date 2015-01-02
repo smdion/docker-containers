@@ -13,20 +13,21 @@ RUN apt-get -q update
 RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get -qy --force-yes dist-upgrade
 
-RUN mkdir -p /root/.config
-RUN ln -s /config/config.yaml /root/.config/beets/config.yaml
-
 # install beets and dependecies
 RUN apt-get install -qy --force-yes python-dev python-pip  mp3gain wget
 RUN yes | pip install beets
 RUN yes | pip install pyacoustid
 RUN yes | pip install pylast
+RUN mkdir -p /root/.config/beets
 ADD src/fpcalc /usr/bin/fpcalc
 ADD src/ffmpeg /usr/bin/ffmpeg
 ADD src/ffprobe /usr/bin/ffprobe
 ADD src/lame /usr/bin/lame
+ADD src/config.yaml /root/.config/beets/config-dist.yaml
 
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
+
+RUN ln -s /config/config.yaml /root/.config/beets/config.yaml
 
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
