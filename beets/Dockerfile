@@ -25,16 +25,9 @@ ADD src/lame /usr/bin/lame
 
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
 
-EXPOSE 4022
-
 RUN mkdir -p /root/.config
 RUN ln -s /config /root/.config/beets
 
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
-
-# Add beets to runit
-RUN mkdir /etc/service/beets
-ADD beets-run.sh /etc/service/beets/run
-RUN chmod +x /etc/service/beets/run
