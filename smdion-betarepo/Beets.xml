@@ -16,9 +16,9 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>4022</HostPort>
-        <ContainerPort>4022</ContainerPort>
-        <Protocol>tcp</Protocol>
+        <HostPort></HostPort>
+        <ContainerPort></ContainerPort>
+        <Protocol></Protocol>
       </Port>
     </Publish>
   </Networking>
