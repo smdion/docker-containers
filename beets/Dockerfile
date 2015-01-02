@@ -13,6 +13,9 @@ RUN apt-get -q update
 RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get -qy --force-yes dist-upgrade
 
+RUN mkdir -p /root/.config
+RUN ln -s /config /root/.config/beets
+
 # install beets and dependecies
 RUN apt-get install -qy --force-yes python-dev python-pip  mp3gain wget
 RUN yes | pip install beets
@@ -24,9 +27,6 @@ ADD src/ffprobe /usr/bin/ffprobe
 ADD src/lame /usr/bin/lame
 
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
-
-RUN mkdir -p /root/.config
-RUN ln -s /config /root/.config/beets
 
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
