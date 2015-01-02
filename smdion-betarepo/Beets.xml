@@ -2,7 +2,7 @@
 <Container>
   <Name>Beets</Name>
   <Description>
-    This is a Dockerfile for "beets" - (http://beets.radbox.org/) On github, in the src folder you will find "SABbeets.sh" which is the script that will run beets from this container. It assumes you are running all containers with the network stack being shared with the host.[br][br]
+    This is a Dockerfile for "beets" - (http://beets.radbox.org/)[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : Where the config file will be created.[br]
     [b]/opt/downloads/music[/b] : Location of music.[br]
