@@ -9,6 +9,8 @@ else
   chown nobody:users /config/beets.sh
   chmod +x /config/beets.sh
 fi
+
+
 # Check if config.yaml exists. If not, copy in
 if [ -f /config/config.yaml ]; then
   echo "Using existing config file."
