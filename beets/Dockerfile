@@ -23,10 +23,10 @@ RUN apt-get -q update && \
   yes | pip install pylast && \
   mkdir -p /root/.config/beets && \
   ln -s /config/config.yaml /root/.config/beets/config.yaml
-ADD src/fpcalc /usr/bin/fpcalc && \
-  src/ffmpeg /usr/bin/ffmpeg && \
-  src/ffprobe /usr/bin/ffprobe && \
-  src/lame /usr/bin/lame
+ADD src/fpcalc /usr/bin/fpcalc
+ADD src/ffmpeg /usr/bin/ffmpeg
+ADD src/ffprobe /usr/bin/ffprobe
+ADD src/lame /usr/bin/lame
 
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
 
