@@ -26,7 +26,8 @@ RUN \
   rm /tmp/unofficialddns_1.0.0_all.deb && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
-  mv /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS-dist.yaml
+  mv /etc/UnofficialDDNS.yaml /etc/UnofficialDDNS-dist.yaml && \
+  ln -s /config/UnofficialDDNS.yaml /etc/UnofficialDDNS.yaml
   
 #Expose Volumes
 VOLUME /config
