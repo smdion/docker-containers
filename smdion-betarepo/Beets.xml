@@ -7,6 +7,7 @@
     [b]/config[/b] : Where the config file will be created.[br]
     [b]/opt/downloads/music[/b] : Location of music.[br]
     [b]/opt/tmp[/b] : Location of incomplete downloads, or incoming downloads, or music to be tagged.[br]
+    [b]EDGE[/b] Variable Case : Installs lastest version from source. [br]
   </Description>
   <Registry>https://registry.hub.docker.com/u/smdion/docker-beets/</Registry>
   <Repository>smdion/docker-beets</Repository>
