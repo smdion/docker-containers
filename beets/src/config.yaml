@@ -8,7 +8,7 @@ per_disc_numbering: no
 color: yes
 
 convert:
-    auto: yes
+    auto: no
     ffmpeg: /usr/bin/ffmpeg
     opts: -ab 320k -ac 2 -ar 48000
     max_bitrate: 320
