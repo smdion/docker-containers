@@ -4,6 +4,7 @@
 if [ -z "$EDGE" ]; then
   echo "edge not requested"
 else
-  pip uninstall beets
-  pip install https://github.com/sampsyo/beets/tarball/master
+  apt-get install git
+  yes | pip uninstall beets
+  git clone https://github.com/sampsyo/beets.git && cd beets && python setup.py install
 fi
