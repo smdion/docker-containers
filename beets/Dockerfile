@@ -30,6 +30,11 @@ ADD src/lame /usr/bin/lame
 
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
 
+# Add edge.sh to execute during container startup
+RUN mkdir -p /etc/my_init.d
+ADD edge.sh /etc/my_init.d/edge.sh
+RUN chmod +x /etc/my_init.d/edge.sh
+
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
