@@ -15,7 +15,9 @@ CMD ["/sbin/my_init"]
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Install beets and dependecies
-RUN apt-get -q update && \
+RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
+  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+  apt-get update -q && \
   apt-get -qy --force-yes dist-upgrade && \
   apt-get install -qy --force-yes python-dev python-pip  mp3gain wget && \
   yes | pip install beets && \
