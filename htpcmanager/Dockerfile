@@ -31,7 +31,7 @@ RUN \
   tar -C /opt/ -xvf /tmp/0.11.0.tar.gz  && \
   chown nobody:users /opt/HTPC-Manager-0.11.0  && \
   rm /tmp/0.11.0.tar.gz && \
-  pip install pillow
+  pip install pillow && \
   pip install psutil
 
 #Expose Ports
