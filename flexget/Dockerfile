@@ -14,7 +14,6 @@ RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
 RUN usermod -d /config nobody
 
-
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
     apt-get update -qq && \
@@ -26,7 +25,7 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
 VOLUME /config
 RUN ln -sf /config /root/.flexget
 
-Add flexget to runit
+# Add flexget to runit
 RUN mkdir /etc/service/flexget
 ADD flexget.sh /etc/service/flexget/run
 RUN chmod +x /etc/service/flexget/run
