@@ -25,3 +25,8 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
 
 VOLUME /config
 RUN ln -sf /config /root/.flexget
+
+Add flexget to runit
+RUN mkdir /etc/service/flexget
+ADD flexget.sh /etc/service/flexget/run
+RUN chmod +x /etc/service/flexget/run
