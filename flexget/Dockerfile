@@ -14,8 +14,10 @@ RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
 RUN usermod -d /config nobody
 
-ADD sources.list /etc/apt/
-RUN apt-get update -qq && \
+
+RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
+    add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+    apt-get update -qq && \
     apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc && \
     apt-get autoremove && \
     apt-get autoclean && \
