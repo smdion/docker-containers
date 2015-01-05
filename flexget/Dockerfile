@@ -23,8 +23,3 @@ RUN apt-get update -qq && \
 
 VOLUME /config
 RUN ln -sf /config /root/.flexget
-
-# Add flexget-webui to runit
-RUN mkdir /etc/service/flexget-webui
-ADD flexget-webui.sh /etc/service/flexget-webui/run
-RUN chmod +x /etc/service/flexget-webui/run
