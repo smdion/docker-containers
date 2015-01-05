@@ -16,7 +16,7 @@ RUN usermod -d /config nobody
 
 ADD sources.list /etc/apt/
 RUN apt-get update -qq && \
-    apt-get install -qq --force-yes python2.7 python-pip python-transmissionrpc && \
+    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc && \
     apt-get autoremove && \
     apt-get autoclean && \
     pip install flexget
