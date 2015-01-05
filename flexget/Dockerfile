@@ -1,5 +1,6 @@
 FROM phusion/baseimage:0.9.15
-MAINTAINER none
+MAINTAINER smdion <me@seandion.com>
+
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set correct environment variables
