@@ -31,8 +31,8 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
     apt-get autoclean && \
     pip install flexget && \ 
     pip install --upgrade six>=1.70 && \
-    ln -sf /config /root/.flexget && \
-    cp /config.yml  /config/config.yml
+    ln -sf /config /root/.flexget
+    
 
 VOLUME /config
 
