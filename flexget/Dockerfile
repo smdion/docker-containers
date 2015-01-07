@@ -20,17 +20,25 @@ RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
 RUN usermod -d /config nobody
 
+# Add default config
+ADD config.yml /config.yml
+
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
     apt-get update -qq && \
-    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc && \
+    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc wget && \
     apt-get autoremove && \
     apt-get autoclean && \
     pip install flexget && \ 
-    pip install --upgrade six>=1.70
+    pip install --upgrade six>=1.70 && \
+    ln -sf /config /root/.flexget && \
+    cp /config.yml  /config/config.yml
 
 VOLUME /config
-RUN ln -sf /config /root/.flexget
+
+# Add firstrun.sh to runit
+ADD firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Add flexget to runit
 RUN mkdir /etc/service/flexget
