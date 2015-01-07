@@ -36,6 +36,10 @@ RUN ln -sf /config /root/.flexget
 
 ADD config.yml /config.yml
 
+# Add firsrun.sh
+ADD firstrun.sh /etc/my_init.d/firstrun.sh && \
+RUN chmod +x /etc/my_init.d/firstrun.sh
+
 # Add flexget to runit
 RUN mkdir /etc/service/flexget
 ADD flexget.sh /etc/service/flexget/run
