@@ -1,3 +1,3 @@
 #!/bin/bash
 
-flexget daemon start [-d]
+flexget daemon start
