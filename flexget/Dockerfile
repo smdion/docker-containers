@@ -32,6 +32,14 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
 VOLUME /config
 RUN ln -sf /config /root/.flexget
 
+# Add in dummy config.yml
+
+ADD config.yml /config.yml
+
+# Add firstrun.sh to execute during container startup
+ADD firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
+
 # Add flexget to runit
 RUN mkdir /etc/service/flexget
 ADD flexget.sh /etc/service/flexget/run
