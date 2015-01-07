@@ -31,6 +31,9 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
 
 VOLUME /config
 RUN ln -sf /config /root/.flexget
+
+# Add in dummy config.yml
+
 ADD config.yml /config.yml
 
 # Add flexget to runit
