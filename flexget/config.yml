@@ -4,4 +4,4 @@ tasks:
     series:
       - pioneer one
       - some series
-    download: ~/torrents/series/
+    download: /config
