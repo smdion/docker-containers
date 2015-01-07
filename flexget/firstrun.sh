@@ -5,7 +5,7 @@ if [ -f /config/config.yml ]; then
   echo "Using existing config file."
 else
   echo "Creating config.yml from template."
-  wget -P /config/ https://raw.githubusercontent.com/smdion/docker-containers/master/flexget/config.yml
+  cp /config.yml  /config/config.yml
   chown nobody:users /config/config.yml
   chmod +x /config/config.yml
 fi
