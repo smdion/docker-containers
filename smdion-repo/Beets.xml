@@ -17,9 +17,9 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort></HostPort>
-        <ContainerPort></ContainerPort>
-        <Protocol></Protocol>
+        <HostPort>8337</HostPort>
+        <ContainerPort>8337</ContainerPort>
+        <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
