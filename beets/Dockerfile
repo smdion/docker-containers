@@ -41,3 +41,7 @@ RUN chmod +x /etc/my_init.d/edge.sh
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
+
+# Add web.sh to execute during container startup
+ADD web.sh /etc/my_init.d/web.sh
+RUN chmod +x /etc/my_init.d/web.sh
