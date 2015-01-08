@@ -33,6 +33,8 @@ ADD src/lame /usr/bin/lame
 
 VOLUME ["/config", "/opt/downloads/music", "/opt/tmp"]
 
+EXPOSE 8337
+
 # Add edge.sh to execute during container startup
 RUN mkdir -p /etc/my_init.d
 ADD edge.sh /etc/my_init.d/edge.sh
