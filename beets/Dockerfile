@@ -23,6 +23,7 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
   yes | pip install beets && \
   yes | pip install pyacoustid && \
   yes | pip install pylast && \
+  yes | pip install flask && \
   mkdir -p /root/.config/beets && \
   ln -s /config/config.yaml /root/.config/beets/config.yaml
 ADD src/fpcalc /usr/bin/fpcalc
