@@ -41,7 +41,9 @@ RUN \
   mv /etc/apache2/sites-available/000-default.conf /etc/apache2/000-default.conf && \
   rm /etc/apache2/sites-available/* && \
   rm /etc/apache2/apache2.conf && \
-  ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf
+  ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf && \
+  mkdir /config/logs && \
+  ln -s /config/logs /var/log/apache2
 
 ADD apache2.conf /etc/apache2/apache2.conf
 ADD ports.conf /etc/apache2/ports.conf
