@@ -42,8 +42,7 @@ RUN \
   rm /etc/apache2/sites-available/* && \
   rm /etc/apache2/apache2.conf && \
   ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf && \
-  mkdir /config/logs && \
-  ln -s /config/logs /var/log/apache2
+  ln -s /logs /var/log/apache2
 
 ADD apache2.conf /etc/apache2/apache2.conf
 ADD ports.conf /etc/apache2/ports.conf
@@ -61,7 +60,7 @@ echo /var/run/apache2 > /etc/container_environment/APACHE_RUN_DIR
 EXPOSE 80 443
 
 # The www directory and proxy config location
-VOLUME ["/config", "/web"]
+VOLUME ["/config", "/web", "/logs"]
 
 # Add firstrun.sh to execute during container startup
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
