@@ -32,7 +32,8 @@ RUN \
   chown nobody:users /opt/HTPC-Manager-0.11.0  && \
   rm /tmp/0.11.0.tar.gz && \
   pip install pillow && \
-  pip install psutil
+  pip install psutil && \
+  pip install paramiko
 
 #Expose Ports
 EXPOSE 8085
