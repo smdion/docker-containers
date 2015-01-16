@@ -26,11 +26,16 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy ddclient inotify-tools cpanminus make gcc && \
+  apt-get install -qy inotify-tools cpanminus make gcc && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
-  mv /etc/ddclient.conf /etc/ddclient.conf-sample && \
+  wget -P /tmp/ http://sourceforge.net/projects/ddclient/files/ddclient/ddclient-3.8.2/ddclient-3.8.2.tar.gz && \
+  tar -C /usr/sbin/ddclient -xvf /tmp/ddclient-3.8.2.tar.gz --strip-components 1 && \
+  mkdir /etc/ddclient && \
+  mkdir /var/cache/ddclient && \
   ln -s /config/ddclient.conf /etc/ddclient.conf
+  
+ADD ddclient.conf-sample /etc/ddclient.conf-sample
 
 #Add required Dependencies for FreeDNS
 RUN cpanm --sudo Digest::SHA1
