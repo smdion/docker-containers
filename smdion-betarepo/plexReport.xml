@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Name>FlexGet</Name>
+  <Name>plexReport</Name>
   <Description>
     This is a Dockerfile for "plexReport" - (https://github.com/bstascavage/plexReport)[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
