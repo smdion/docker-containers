@@ -41,7 +41,8 @@ RUN \
   git clone https://github.com/bstascavage/plexReport.git /opt/plexReport && \
   cd /opt/plexReport/ && \
   gem install bundle && \
-  bundle install
+  bundle install && \
+  ln -s /config/config.yaml /opt/plexReport/etc/config.yaml
   
 #Expose Volumes
 VOLUME /config
