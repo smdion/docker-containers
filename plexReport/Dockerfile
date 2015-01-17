@@ -42,7 +42,8 @@ RUN \
   cd /opt/plexReport/ && \
   gem install bundle && \
   bundle install && \
-  ln -s /config/config.yaml /opt/plexReport/etc/config.yaml
+  ln -s /config/config.yaml /opt/plexReport/etc/config.yaml && \
+  ln -s /config/plexReport.log /opt/plexReport/plexReport.log
   
 #Expose Volumes
 VOLUME /config
