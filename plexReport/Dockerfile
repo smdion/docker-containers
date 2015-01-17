@@ -26,7 +26,7 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy ruby ruby-dev git && \
+  apt-get install -qy ruby ruby-dev git make gcc && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
   git clone https://github.com/bstascavage/plexReport.git /opt/plexReport && \
