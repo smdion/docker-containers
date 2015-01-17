@@ -1,4 +1,4 @@
-   #!/bin/sh
+#!/bin/sh
 
 while inotifywait -e modify /config/crons.conf; do
     rm /root/crons.conf
