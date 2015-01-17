@@ -30,6 +30,7 @@ RUN \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
   wget -P /tmp/ http://sourceforge.net/projects/ddclient/files/ddclient/ddclient-3.8.2/ddclient-3.8.2.tar.gz && \
+  mkdir /usr/sbin/ddclient && \
   tar -C /usr/sbin/ddclient -xvf /tmp/ddclient-3.8.2.tar.gz --strip-components 1 && \
   mkdir /etc/ddclient && \
   mkdir /var/cache/ddclient && \
