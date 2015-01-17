@@ -34,6 +34,7 @@ RUN \
   tar -C /usr/sbin/ddclient -xvf /tmp/ddclient-3.8.2.tar.gz --strip-components 1 && \
   mkdir /etc/ddclient && \
   mkdir /var/cache/ddclient && \
+  cp /usr/sbin/ddclient/sample-etc_rc.d_init.d_ddclient /etc/init.d/ddclient
   ln -s /config/ddclient.conf /etc/ddclient.conf
   
 ADD ddclient.conf-sample /etc/ddclient.conf-sample
