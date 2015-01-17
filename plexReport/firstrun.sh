@@ -8,3 +8,12 @@ else
   mv /opt/plexReport/etc/config.yaml.example /config/config.yaml
   chown nobody:users /config/config.yaml
 fi
+
+# Check if crons.conf exists. If not, copy in the sample config
+if [ -f /config/crons.conf ]; then
+  echo "Using existing config file."
+else
+  echo "Creating config from template."
+  cp /root/crons.conf /config/crons.conf
+  chown nobody:users /config/crons.conf
+fi
