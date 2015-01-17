@@ -26,16 +26,9 @@ RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
-  apt-get install -qy inotify-tools wget cpanminus make gcc && \
+  apt-get install -qy inotify-tools ddclient cpanminus make gcc && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
-  wget -P /tmp/ http://sourceforge.net/projects/ddclient/files/ddclient/ddclient-3.8.2/ddclient-3.8.2.tar.gz && \
-  mkdir /usr/sbin/ddclient && \
-  tar -C /usr/sbin/ddclient -xvf /tmp/ddclient-3.8.2.tar.gz --strip-components 1 && \
-  mkdir /etc/ddclient && \
-  mkdir /var/cache/ddclient && \
-  /sbin/chkconfig --add ddclient && \
-  cp /usr/sbin/ddclient/sample-etc_rc.d_init.d_ddclient /etc/init.d/ddclient
   ln -s /config/ddclient.conf /etc/ddclient.conf
   
 ADD ddclient.conf-sample /etc/ddclient.conf-sample
