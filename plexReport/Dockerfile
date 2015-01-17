@@ -21,6 +21,15 @@ CMD ["/sbin/my_init"]
 # Disable SSH
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
+# Add our crontab file
+ADD crons.conf /root/crons.conf
+
+# Use the crontab file
+RUN crontab /root/crons.conf
+
+# Start cron
+RUN cron
+
 # Install PROGRAM
 RUN \
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
