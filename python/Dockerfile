@@ -17,6 +17,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python python-pip
 # install python requirements
 #RUN pip install ...
 
+# Add our crontab file
+ADD crons.conf /root/crons.conf
+
+# Use the crontab file
+RUN crontab /root/crons.conf
+
+# Start cron
+RUN cron
+
 # define a mount point
 VOLUME /student.py
 
