@@ -8,6 +8,9 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
+# Use baseimage-docker's init system
+CMD ["/sbin/my_init"]
+
 # update ubuntu repository
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
 
@@ -28,6 +31,14 @@ RUN cron
 
 # define a mount point
 VOLUME /student.py
+VOLUME /config
 
-# define command for this image
-CMD ["python","/student.py"]
+# Add inotify.sh to execute during container startup
+RUN mkdir /etc/service/inotify
+ADD inotify.sh /etc/service/inotify/run
+RUN chmod +x /etc/service/inotify/run
+
+# Add python to runit
+RUN mkdir /etc/service/python
+ADD python.sh /etc/service/python/run
+RUN chmod +x /etc/service/python/run
