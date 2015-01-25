@@ -15,7 +15,7 @@ CMD ["/sbin/my_init"]
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
 
 # install ubuntu packages
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python python-pip
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python python-pip inotify-tools
 
 # install python requirements
 #RUN pip install ...
