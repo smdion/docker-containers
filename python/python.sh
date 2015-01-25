@@ -1,3 +1,3 @@
 #/bin/bash
 
-python /student.py
+python /run.py
