@@ -29,9 +29,14 @@
   <Data>
      <Volume>
       <HostDir>/path/to/file.py</HostDir>
-      <ContainerDir>/student.py</ContainerDir>
+      <ContainerDir>/run.py</ContainerDir>
       <Mode>rw</Mode>
     </Volume> 
+     <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
     <Volume>
       <HostDir>/etc/localtime</HostDir>
       <ContainerDir>/etc/localtime</ContainerDir>
