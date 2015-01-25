@@ -30,7 +30,7 @@ RUN crontab /root/crons.conf
 RUN cron
 
 # define a mount point
-VOLUME /student.py
+VOLUME /run.py
 VOLUME /config
 
 # Add inotify.sh to execute during container startup
