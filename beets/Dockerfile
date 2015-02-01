@@ -19,11 +19,12 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
   add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
   apt-get update -q && \
   apt-get -qy --force-yes dist-upgrade && \
-  apt-get install -qy --force-yes python-dev python-pip  mp3gain wget && \
+  apt-get install -qy --force-yes python-dev python-pip  mp3gain wget apt-get python-gst0.10-dev gstreamer0.10-plugins-good gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly && \
   yes | pip install beets && \
   yes | pip install pyacoustid && \
   yes | pip install pylast && \
   yes | pip install flask && \
+  yes | pip install discogs-client && \
   mkdir -p /root/.config/beets && \
   ln -s /config/config.yaml /root/.config/beets/config.yaml
 ADD src/fpcalc /usr/bin/fpcalc
