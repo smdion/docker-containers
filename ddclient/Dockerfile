@@ -38,7 +38,7 @@ RUN \
   cp sample-etc_rc.d_init.d_ddclient.ubuntu /etc/init.d/ddclient && \
   update-rc.d ddclient defaults && \
   mv sample-etc_ddclient.conf /etc/ddclient.conf-sample && \
-  ln -s /config/ddclient.conf /etc/ddclient.conf
+  ln -s /config/ddclient.conf /etc/ddclient/ddclient.conf
 
 #Add required Dependencies for FreeDNS
 RUN cpanm --sudo Digest::SHA1
