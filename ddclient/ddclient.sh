@@ -1,3 +1,3 @@
 #!/bin/bash
-
-/etc/init.d/ddclient start
+echo "Starting DDClient"
+/usr/sbin/ddclient -foreground -syslog
