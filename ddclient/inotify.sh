@@ -1,6 +1,6 @@
 #!/bin/sh
 
 while inotifywait -e modify /config; do
-    /etc/init.d/ddclient restart
+    sv hup ddclient
     echo "File in Config Folder Changed, Restarted"
 done
