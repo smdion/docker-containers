@@ -31,20 +31,20 @@ RUN crontab /root/crons.conf
 RUN cron
 
 # Install PROGRAM
-RUN \
-  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
-  add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
-  apt-get update -q && \
-  apt-get install -qy ruby ruby-dev git make gcc inotify-tools && \
-  apt-get clean -y && \
-  rm -rf /var/lib/apt/lists/* && \
-  git clone https://github.com/bstascavage/plexReport.git /opt/plexReport && \
-  cd /opt/plexReport/ && \
+RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
+RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse"
+RUN apt-get update -q
+RUN apt-get install -qy ruby ruby-dev git make gcc inotify-tools
+RUN apt-get clean -y
+RUN rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/bstascavage/plexReport.git /opt/plexReport
+RUN cd /opt/plexReport/ && \
   gem install bundle && \
-  bundle install && \
-  ./initial_setup.sh && \
-  ln -s /config/config.yaml /opt/plexReport/etc/config.yaml && \
-  ln -s /opt/plexReport/plexReport.log /config/plexReport.log
+  bundle install
+RUN cd /opt/plexReport/ && \
+  ./initial_setup.sh
+RUN ln -s /config/config.yaml /opt/plexReport/etc/config.yaml
+RUN ln -s /opt/plexReport/plexReport.log /config/plexReport.log
   
 #Expose Volumes
 VOLUME /config
