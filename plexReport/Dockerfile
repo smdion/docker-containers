@@ -42,8 +42,6 @@ RUN \
  cd /opt/plexReport/ && \
  gem install bundle && \
  bundle install && \
- cd /opt/plexReport/ && \
- ./initial_setup.sh && \
  ln -s /config/config.yaml /etc/config.yaml && \
  ln -s /config/plexReport.log /opt/plexReport/plexReport.log
   
