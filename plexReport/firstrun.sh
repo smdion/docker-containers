@@ -5,7 +5,7 @@ if [ -f /config/config.yaml ]; then
   echo "Using existing config file."
 else
   echo "Creating config from template."
-  mv /etc/config.yaml.example /config/config.yaml
+  mv /opt/plexReport/etc/config.yaml.example /config/config.yaml
   chown nobody:users /config/config.yaml
 fi
 
