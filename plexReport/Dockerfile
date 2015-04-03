@@ -43,7 +43,8 @@ RUN cd /opt/plexReport/ && \
   bundle install
 RUN cd /opt/plexReport/ && \
   ./initial_setup.sh
-RUN ln -s /config/config.yaml /etc/plexReport/config.yaml
+RUN rm /opt/plexReport/etc/config.yaml
+RUN ln -s /config/config.yaml /opt/plexReport/etc/config.yaml
 RUN ln -s /config/plexReport.log /opt/plexReport/plexReport.log
   
 #Expose Volumes
