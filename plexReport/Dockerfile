@@ -43,7 +43,6 @@ RUN cd /opt/plexReport/ && \
   bundle install
 RUN cd /opt/plexReport/ && \
   ./initial_setup.sh
-RUN rm /etc/config.yaml
 RUN ln -s /config/config.yaml /etc/config.yaml
 RUN ln -s /config/plexReport.log /opt/plexReport/plexReport.log
   
