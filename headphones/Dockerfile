@@ -19,8 +19,8 @@ RUN apt-get install -qy python wget
 
 # Install headphones v0.3.4
 RUN mkdir /opt/headphones
-RUN wget -P /tmp/ https://github.com/rembo10/headphones/archive/v0.5.2.tar.gz
-RUN tar -C /opt/headphones -xvf /tmp/v0.5.2.tar.gz --strip-components 1
+RUN wget -P /tmp/ https://github.com/rembo10/headphones/archive/v0.5.4.tar.gz
+RUN tar -C /opt/headphones -xvf /tmp/v0.5.4.tar.gz --strip-components 1
 RUN chown nobody:users /opt/headphones
 
 EXPOSE 8181
