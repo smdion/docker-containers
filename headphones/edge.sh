@@ -6,6 +6,6 @@ if [ -z "$EDGE" ]; then
 else
   apt-get install -qy git
   rm -rf /opt/headphones
-  git clone https://github.com/rembo10/headphones.git /opt/headphones
-  chown -R nobody:users /opt/headphones
+  git clone https://github.com/rembo10/headphones.git /opt/headphones/
+  chown -R nobody:users /opt/headphones/
 fi
