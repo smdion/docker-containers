@@ -4,7 +4,6 @@
   <Description>
     This is a Dockerfile for "Keybox" - (http://sshkeybox.com/)[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
-    [b]/config[/b] : Where the config file will be created.[br]
   </Description>
   <Registry>https://registry.hub.docker.com/u/smdion/docker-keybox/</Registry>
   <Repository>smdion/docker-keybox</Repository>
