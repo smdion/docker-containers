@@ -4,6 +4,7 @@
 if [ -z "$PLEX" ]; then
   echo "Plex not requested"
 else
+  apt-get update
   apt-get install -qy git
   rm -rf /opt/maraschino
   git clone -b plex https://github.com/gugahoi/maraschino.git /opt/maraschino
