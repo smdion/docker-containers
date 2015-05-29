@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>True</Beta>
+<Category>Network:Other</Category>
   <Name>Keybox</Name>
   <Description>
     This is a Dockerfile for "Keybox" - (http://sshkeybox.com/)[br][br]
