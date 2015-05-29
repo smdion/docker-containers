@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>True</Beta>
+<Category>MediaApp:Music MediaServer:Music</Category>
   <Name>plexReport</Name>
   <Description>
     This is a Dockerfile for "plexReport" - (https://github.com/bstascavage/plexReport)[br][br]
