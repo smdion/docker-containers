@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>False</Beta>
+<Category>MediaApp:Video MediaApp:Music MediaApp:Photos</Category>
   <Name>Maraschino</Name>
   <Description>
     Maraschino a simple web interface to act as a nice overview/front page for my XBMC HTPC[br][br]
