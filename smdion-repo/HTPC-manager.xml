@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>False</Beta>
+<Category>MediaApp:Video MediaApp:Music MediaApp:Photos Tools:</Category>
   <Name>HTPC-Manager</Name>
   <Description>
     HTPC-Manager allows you to manage your HTPC from anywhere[br][br]
