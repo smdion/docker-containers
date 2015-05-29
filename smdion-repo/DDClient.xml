@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>False</Beta>
+<Category>Network:DNS</Category>
   <Name>DDClient</Name>
   <Description>This is a Dockerfile setup for DDClient. Client to update DynDNS service.&#13;
 Edit /config/ddclient.conf[br][br]&#13;
