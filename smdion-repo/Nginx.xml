@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>False</Beta>
+<Category>Network:Proxy</Category>
   <Name>Nginx</Name>
   <Description>
     nginx [engine x] is an HTTP and reverse proxy server, as well as a mail proxy server, written by Igor Sysoev[br][br]
