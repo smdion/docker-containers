@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>False</Beta>
+<Category>Cloud: Network:Web</Category>
   <Name>H5AI</Name>
   <Description>
     H5AI is a modern web server index. This docker image makes it trivially easy to spin up a webserver and start sharing your files through the web.[br][br]
