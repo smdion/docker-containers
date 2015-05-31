@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+	<Beta>False</Beta>
+<Category>Downloaders:</Category>
   <Name>Headphones</Name>
   <Description>
     Headphones is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.[br][br]
