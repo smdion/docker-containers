@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>False</Beta>
+<Category>Network:Web Network:Proxy</Category>
   <Name>Reverse-Proxy</Name>
   <Description>
     Reverse Proxy is a Apache based web server set up to act as a proxy with basic PHP web server capabilities[br][br]
