@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>True</Beta>
+<Category>Downloaders:</Category>
   <Name>FlexGet</Name>
   <Description>
     This is a Dockerfile for "FlexGet" - (http://flexget.com/)[br][br]
