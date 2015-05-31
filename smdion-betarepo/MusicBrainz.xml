@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>True</Beta>
+<Category>MediaApp:Music</Category>
   <Name>MusicBrainz</Name>
   <Description>
     MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.[br][br]
