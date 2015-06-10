@@ -40,7 +40,7 @@ RUN \
  rm -rf /var/lib/apt/lists/* && \
  git clone https://github.com/bstascavage/plexReport.git /opt/plexReport && \
  cd /opt/plexReport/ && \
- gem install bundle && \
+ gem install bundler && \
  bundle install && \
  ln -s /config/config.yaml /etc/config.yaml && \
  ln -s /config/plexReport.log /opt/plexReport/plexReport.log
