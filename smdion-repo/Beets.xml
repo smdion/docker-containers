@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
+  <Beta>False</Beta>
+<Category>MediaApp:Music</Category>
   <Name>Beets</Name>
   <Description>
     This is a Dockerfile for "beets" - (http://beets.radbox.org/)[br][br]
