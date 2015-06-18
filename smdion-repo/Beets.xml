@@ -4,7 +4,7 @@
 <Category>MediaApp:Music</Category>
   <Name>Beets</Name>
   <Description>
-    This is a Dockerfile for "beets" - (http://beets.radbox.org/)[br][br]
+    The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. Then it provides a bouquet of tools for manipulating and accessing your music.[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : Where the config file will be created.[br]
     [b]/opt/downloads/music[/b] : Location of music.[br]
@@ -28,7 +28,7 @@
   <Environment>
     <Variable>
       <Name>EDGE</Name>
-      <Value></Value>
+      <Value>0</Value>
     </Variable>
   </Environment>
   <Data>
