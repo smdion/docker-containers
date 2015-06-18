@@ -23,10 +23,11 @@ RUN usermod -d /config nobody
 # Add default config
 ADD config.yml /config.yml
 
-RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
+RUN add-apt-repository "ppa:fkrull/deadsnakes-python2.7" && \
+    add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
     apt-get update -qq && \
-    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc wget && \
+    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc deluge-common wget && \
     apt-get autoremove && \
     apt-get autoclean && \
     pip install flexget && \ 
