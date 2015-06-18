@@ -4,7 +4,7 @@
 <Category>MediaApp:Video MediaApp:Music MediaApp:Photos Tools:</Category>
   <Name>HTPC-Manager</Name>
   <Description>
-    HTPC-Manager allows you to manage your HTPC from anywhere[br][br]
+    HTPC-Manager allows you to manage your HTPC from anywhere. More Info: http://htpc.io/[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : this path is used to store the configuration and the database files of HTPC-Manager.[br]
     [b]NZBDRONE[/b] : Add "1" to the Variable Value without the quotes to use the NZBDrone version (https://github.com/Hellowlol/HTPC-Manager GIT)(Cannot use both NZBDRONE and EDGE) [br]
