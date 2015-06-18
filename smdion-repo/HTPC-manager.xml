@@ -27,11 +27,11 @@
   <Environment>
     <Variable>
       <Name>NZBDRONE</Name>
-      <Value></Value>
+      <Value>0</Value>
     </Variable>
         <Variable>
       <Name>EDGE</Name>
-      <Value></Value>
+      <Value>0</Value>
     </Variable>
   </Environment>
   <Data>
