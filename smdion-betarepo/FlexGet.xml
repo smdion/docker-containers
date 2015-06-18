@@ -4,7 +4,7 @@
 <Category>Downloaders:</Category>
   <Name>FlexGet</Name>
   <Description>
-    This is a Dockerfile for "FlexGet" - (http://flexget.com/)[br][br]
+    FlexGet is a multipurpose automation tool for content like torrents, nzbs, podcasts, comics, series, movies, etc. It can use different kinds of sources like RSS-feeds, html pages, csv files, search engines and there are even plugins for sites that do not provide any kind of useful feeds.(http://flexget.com/)[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : Where the config file will be created.[br]
   </Description>
