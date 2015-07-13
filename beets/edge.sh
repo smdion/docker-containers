@@ -6,5 +6,6 @@ if [ -z "$EDGE" ]; then
 else
   apt-get install -qy git
   yes | pip uninstall beets
+  rm -r beets
   git clone https://github.com/sampsyo/beets.git && cd beets && python setup.py install
 fi
