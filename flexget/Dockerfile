@@ -7,10 +7,10 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
 
 # Set the locale
-RUN locale-gen en_US.UTF-8  
-ENV LANG en_US.UTF-8  
+RUN locale-gen de_DE.UTF-8  
+ENV LANG de_DE.UTF-8 
 ENV LANGUAGE en_US:en  
-ENV LC_ALL en_US.UTF-8 
+ENV LC_ALL de_DE.UTF-8 
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
@@ -26,7 +26,7 @@ ADD config.yml /config.yml
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
     apt-get update -qq && \
-    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc wget && \
+    apt-get install -qq --force-yes libffi-dev python2.7 python-dev python-pip python-transmissionrpc wget && \
     apt-get autoremove && \
     apt-get autoclean && \
     pip install flexget && \ 
