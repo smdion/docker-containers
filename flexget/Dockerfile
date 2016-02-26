@@ -1,5 +1,5 @@
-FROM phusion/baseimage:0.9.16
-MAINTAINER smdion <me@seandion.com>
+FROM phusion/baseimage:0.9.18
+MAINTAINER rix1337
 
 ENV DEBIAN_FRONTEND noninteractive
 
