@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#update to latest version
+pip install --upgrade setuptools
+pip install --upgrade flexget
+
 # Check if config.yml exists. If not, copy in
 if [ -f /config/config.yml ]; then
   echo "Using existing config file."
