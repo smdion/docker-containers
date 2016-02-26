@@ -1,8 +1,8 @@
 #!/bin/bash
 
+echo "$(date "+%d.%m.%Y %T") : Launching FlexGet"
 #update to latest version
-echo Updating FlexGet
-pip install --upgrade setuptools
+echo "$(date "+%d.%m.%Y %T") : Updating..."
 pip install --upgrade flexget
 flexget -V
 
