@@ -1,8 +1,10 @@
 #!/bin/bash
 
 #update to latest version
+echo Updating FlexGet
 pip install --upgrade setuptools
 pip install --upgrade flexget
+flexget -V
 
 # Check if config.yml exists. If not, copy in
 if [ -f /config/config.yml ]; then
