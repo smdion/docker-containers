@@ -1,3 +1,0 @@
-#!/bin/bash
-
-beet web
