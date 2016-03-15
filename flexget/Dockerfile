@@ -34,8 +34,7 @@ RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe
     pip install --upgrade six>=1.70 && \
     ln -sf /config /root/.flexget
     
-COPY /config/Search-Plugins/search_serienjunkies.py /usr/local/lib/python2.7/dist-packages/flexget/plugins/search_serienjunkies.py
-	
+
 VOLUME /config
 
 # Add firstrun.sh to runit
