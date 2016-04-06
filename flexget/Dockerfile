@@ -1,5 +1,5 @@
-FROM phusion/baseimage:0.9.16
-MAINTAINER smdion <me@seandion.com>
+FROM phusion/baseimage:0.9.18
+MAINTAINER rix1337
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -26,9 +26,10 @@ ADD config.yml /config.yml
 RUN add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
     apt-get update -qq && \
-    apt-get install -qq --force-yes python2.7 python-dev python-pip python-transmissionrpc wget && \
+    apt-get install -qq --force-yes python2.7 python-dev python-pip wget && \
     apt-get autoremove && \
     apt-get autoclean && \
+	pip install --upgrade setuptools && \ 
     pip install flexget && \ 
     pip install --upgrade six>=1.70 && \
     ln -sf /config /root/.flexget
